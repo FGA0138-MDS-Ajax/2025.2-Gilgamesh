@@ -23,7 +23,8 @@
 
 **Discussões:**
 
-Criação das branchs develop e feature/login, preenchimento/organização do zenhub, definição de tarefas para a primeira sprint, organização de quem ia gravar o vídeo de apresentação do zenhub.
+Criação das branchs develop e feature/login, preenchimento/organização do zenhub, definição de tarefas para a primeira sprint, organização de quem ia gravar o vídeo de apresentação do zenhub.<br>
+
 **Decisões:**
 
 - Criação de branches.<br> 
@@ -33,15 +34,15 @@ Criação das branchs develop e feature/login, preenchimento/organização do ze
 - Preenchimento da sprint burdown, quadro de tarefa <br>
 
 **Para a gravação do vídeo**
-- Guilherme Carvalho - Work Tracker (Zenhub)
-- Maria Luana - Timeline (Zenhub)
-- Lucas - Daily Standup, Release burnup, Sprint Burnup (Zenhub)
-- Edson - Repositório de código fonte
-- A definir - Repositorio de documentação
+- Guilherme Carvalho - Work Tracker (Zenhub)<br>
+- Maria Luana - Timeline (Zenhub)<br>
+- Lucas - Daily Standup, Release burnup, Sprint Burnup (Zenhub)<br>
+- Edson - Repositório de código fonte <br>
+- A definir - Repositorio de documentação <br>
 
 **Responsáveis:**
 
-Todos os integrantes do grupo.
+Todos os integrantes do grupo.<br>
 
 ## Próxima Reunião
 **Data:** 03/11/2025 <br>
