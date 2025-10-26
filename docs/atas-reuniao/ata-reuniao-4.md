@@ -2,7 +2,7 @@
 | :----: | :--: | :--------------------: | :-------------------: |
 | 1.0 | 26/10/2025 | Registro da ata de reunião 4 | Edson Pereira |
 
-# Reunião 3 - Gilgamesh -
+# Reunião 4 - Gilgamesh -
 
 ## Informações gerais
 **Data:** 26/10/2025 <br> 
