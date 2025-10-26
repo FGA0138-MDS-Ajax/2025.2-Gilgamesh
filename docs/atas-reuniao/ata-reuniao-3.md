@@ -1,8 +1,8 @@
 | Versão | Data | Descrição da Alteração | Nome(s) Integrante(s) |
 | :----: | :--: | :--------------------: | :-------------------: |
-| 1.0 | 24/10/2025 | Registro da ata de reunião 2 | Edson Pereira |
+| 1.0 | 24/10/2025 | Registro da ata de reunião 3 | Edson Pereira |
 
-# Reunião 2 - Gilgamesh -
+# Reunião 3 - Gilgamesh -
 
 ## Informações gerais
 **Data:** 24/10/2025 <br> 
@@ -38,6 +38,6 @@ Modificação da data de reuniões, criação de planilha com os pares de desenv
 Todos os integrantes do grupo.
 
 ## Próxima Reunião
-**Data:** 27/10/2025 
-**Hora:** 19:00
-**Local:** On-line (Discord)
+**Data:** 27/10/2025 <br>
+**Hora:** 19:00 <br>
+**Local:** On-line (Discord) <br>
