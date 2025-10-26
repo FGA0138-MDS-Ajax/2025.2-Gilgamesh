@@ -32,6 +32,13 @@ Criação das branchs develop e feature/login, preenchimento/organização do ze
 - Definição de duplas e o que elas deverão fazer na semana <br>
 - Preenchimento da sprint burdown, quadro de tarefa <br>
 
+**Para a gravação do vídeo**
+- Guilherme Carvalho - Work Tracker (Zenhub)
+- Maria Luana - Timeline (Zenhub)
+- Lucas - Daily Standup, Release burnup, Sprint Burnup (Zenhub)
+- Edson - Repositório de código fonte
+- A definir - Repositorio de documentação
+
 **Responsáveis:**
 
 Todos os integrantes do grupo.
