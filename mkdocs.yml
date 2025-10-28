@@ -8,5 +8,7 @@ nav:
     - Ata 3: "atas-reuniao/ata-reuniao-3.md"
     - Ata 4: "atas-reuniao/ata-reuniao-4.md"
 
+  -Visão de produto:
+    -Lean Inception: "visao-de-product.pdf"
 theme:
   name: material
