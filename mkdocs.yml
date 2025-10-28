@@ -8,7 +8,5 @@ nav:
     - Ata 3: "atas-reuniao/ata-reuniao-3.md"
     - Ata 4: "atas-reuniao/ata-reuniao-4.md"
 
-  -Visão de produto:
-    -Lean Inception: "Visao-de-produt/Template Lean Inception Gilgamesh _compressed.pdf"
 theme:
   name: material
