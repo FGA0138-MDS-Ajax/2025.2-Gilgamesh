@@ -10,13 +10,13 @@
 **Local:** On-line (Discord) <br> 
 
 ## Participantes
-Artur
-Edson
-Ester
-Guilherme C.
-Lucas
-Luis Fernando
-Thauany
+Artur <br> 
+Edson <br> 
+Ester <br> 
+Guilherme C. <br> 
+Lucas <br> 
+Luis Fernando <br> 
+Thauany <br>  
 
 
 ## Discussões e Decisões
@@ -27,16 +27,16 @@ Alinhamento sobre a criação do Documento de Arquitetura do projeto. Foi discut
 
 **Decisões:**
 
-A equipe adotará a estratégia de "dividir para conquistar" para a elaboração do documento de arquitetura. <br>
-O prazo final para entrega do documento é sexta-feira (31/10) às 14:00. <br>
-Definição das responsabilidades para os tópicos do documento e para o protótipo. <br>
+- A equipe adotará a estratégia de "dividir para conquistar" para a elaboração do documento de arquitetura. <br>
+- O prazo final para entrega do documento é sexta-feira (31/10) às 14:00. <br>
+- Definição das responsabilidades para os tópicos do documento e para o protótipo. <br>
 
 **Responsáveis:**
 
-Artur e Ester: Tópico 2.8 do documento. <br>
-Edson e Lucas: Tópico 2.6 do documento. <br>
-Guilherme C: Tópico 2.7 do documento. <br>
-Thauany, Vinicius e Paulo: Protótipo do projeto (para próxima semana). <br>
+- Artur e Ester: Tópico 2.8 do documento. <br>
+- Edson e Lucas: Tópico 2.6 do documento. <br>
+- Guilherme C: Tópico 2.7 do documento. <br>
+- Thauany, Vinicius e Paulo: Protótipo do projeto no figma (para próxima semana). <br>
 
 ## Próxima Reunião
 **Data:** 03/11/2025 <br>
