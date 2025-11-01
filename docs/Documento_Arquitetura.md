@@ -90,6 +90,7 @@ A **View** é a camada que processa as requisições e retorna as respostas apro
 
 Por último, a camada de **Template** é responsável pela apresentação das informações ao usuário final. Ela define a estrutura visual das páginas HTML, integrando dados enviados pela View e elementos de design definidos pela equipe para a interface. 
 
+
 ***
 
 ![Diagrama de Arquitetura, Elaborado por: Lucas Itacamby](imagens/Representacao_Arquitetura.png)
@@ -130,12 +131,13 @@ O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas*
 
 #### 2.6.1 Módulos do Sistema (Backend - Django) 
 
-| Módulo (App) | Razão Lógica | Componentes Principais |
-| :--- | :--- | :--- |
-| **Autenticação** (`autenticacao`)  | Gerenciar cadastro, login e segurança  | Model: Usuário. View: RegisterView, LoginView. |
-| **ONGs** (`ongs`) | Permite o CRUD de perfis de ONGs e a visualização pública  | Model: Usuário (tipo_usuario:ong). View: ONGView. |
-| **Gestão de Eventos** (`eventos`)  | Permite a criação de eventos pela ONG e a inscrição de voluntários  | Model: Evento, Participação. View: EventoView, ParticipacaoView. |
-| **Administração**  | Gerencia usuários e configurações do sistema [ | Utiliza o módulo `django.contrib.admin`. |
+| **Módulo (App)**                  | **Razão Lógica**                                                   | **Componentes Principais**                                                  |
+| :-------------------------------- | :----------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| **Autenticação** (`autenticacao`) | Gerenciar cadastro, login e segurança                              | **Model:** Usuário.<br>**View:** RegisterView, LoginView.                   |
+| **ONGs** (`ongs`)                 | Permite o CRUD de perfis de ONGs e a visualização pública          | **Model:** Usuário (tipo_usuario: ong).<br>**View:** ONGView.               |
+| **Gestão de Eventos** (`eventos`) | Permite a criação de eventos pela ONG e a inscrição de voluntários | **Model:** Evento, Participação.<br>**View:** EventoView, ParticipacaoView. |
+| **Administração**                 | Gerencia usuários e configurações do sistema                       | Utiliza o módulo `django.contrib.admin`.                                    |
+
 
 #### 2.6.2 Módulos do Sistema (Frontend - Flutter) 
 
@@ -151,7 +153,7 @@ O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas*
 
 #### 2.6.4 Diagrama de Classes 
 
-
+O diagrama de classes apresentado a seguir ilustra a estrutura básica do sistema Apoia+, mostrando os principais componentes e como eles se relacionam entre si. Essa representação permite visualizar os elementos fundamentais que compõem a aplicação, incluindo as entidades principais, suas características e as conexões existentes. 
 ***
 
 ![Diagrama de classes, Elaborado por: Edson Pereira](imagens/UML_Classes.png)
