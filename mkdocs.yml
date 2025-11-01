@@ -12,20 +12,23 @@ nav:
 
 theme:
   name: material
+  
+  # Adicione o bloco 'palette' para configurar o tema claro e o tema escuro.
   palette:
-    # 1. ESQUEMA DE CORES GERAL (Fundo da página e da barra de navegação)
-    # Selecione um: default (claro), slate (escuro/cinza), ou outro.
-    scheme: slate # 'default' para claro, 'slate' para escuro
+    # 1. Configuração do Tema CLARO (Day mode)
+    - media: "(prefers-color-scheme: light)" # Aplica-se se o SO for claro
+      scheme: default                        # Esquema padrão do Material (fundo claro)
+      primary: indigo                        # Cor principal de destaque (cabeçalho, etc.)
+      accent: deep orange                    # Cor de acento (links, botões)
+      toggle:
+        icon: material/brightness-7          # Ícone de Sol
+        name: Trocar para modo escuro
 
-    # 2. COR PRIMÁRIA (Cor principal de destaque: cabeçalho, botões, links)
-    # Escolha uma cor: red, pink, indigo, blue, green, amber, etc.
-    primary: indigo
-
-    # 3. COR DE ACENTO (Usada para destaques menores, como caixas de seleção)
-    # Escolha uma cor: red, pink, indigo, blue, green, amber, etc.
-    accent: amber
-
-  # 4. CONFIGURAÇÕES VISUAIS DA FONTE
-  font:
-    text: Roboto # Fonte do corpo do texto
-    code: Roboto Mono # Fonte usada para código           
+    # 2. Configuração do Tema ESCURO (Night mode)
+    - media: "(prefers-color-scheme: dark)"  # Aplica-se se o SO for escuro
+      scheme: slate                          # Esquema escuro do Material (fundo cinza escuro)
+      primary: blue grey                     # Cor principal de destaque no escuro
+      accent: deep orange                    # Cor de acento
+      toggle:
+        icon: material/brightness-4          # Ícone de Lua
+        name: Trocar para modo claro       
