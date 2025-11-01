@@ -8,6 +8,7 @@ nav:
     - Ata 3: "atas-reuniao/ata-reuniao-3.md"
     - Ata 4: "atas-reuniao/ata-reuniao-4.md"
     - Ata 5: "atas-reuniao/ata-reuniao-5.md"
+   -Documento de arquitetura: "Documento_Arquitetura.md" 
 
 theme:
   name: material
