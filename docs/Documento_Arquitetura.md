@@ -50,7 +50,7 @@ Ele descreve as escolhas tecnológicas, os padrões de design e a decomposição
 
 O presente documento descreve a arquitetura do sistema “Apoia+”, uma aplicação móvel desenvolvida com o objetivo de conectar pessoas dispostas a doar para instituições sociais e ONGs cadastradas, promovendo o engajamento solidário e facilitando o acesso a campanhas de apoio em diferentes regiões. O sistema busca centralizar informações sobre campanhas ativas, simplificar o processo de doação e fortalecer a visibilidade das organizações sociais, alinhando-se a objetivos de desenvolvimento sustentável, como redução das desigualdades e erradicação da pobreza.
 
-O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessível, responsiva e intuitiva, compatível tanto com dispositivos móveis quanto navegadores web, e que permita30:
+O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessível, responsiva e intuitiva, compatível tanto com dispositivos móveis quanto navegadores web, e que permita:
 
 * O cadastro e autenticação de usuários (doadores e representantes de ONGs);
 * O cadastro e a gestão de ONGs e campanhas de arrecadação;
@@ -80,15 +80,15 @@ Dessa forma, acreditamos que essa escolha será vantajosa não apenas em termos 
 
 ### 2.3 Detalhamento 
 
-O padrão arquitetural adotado para o desenvolvimento do sistema Apoia+ é o MVT (Model-View-Template), implementado com o framework Django. Esse modelo segue o princípio da arquitetura em camadas, promovendo a separação de responsabilidades, a modularização do código e a facilidade na manutenção e evolução do sistema. 
+O padrão arquitetural adotado para o desenvolvimento do sistema Apoia+ é o **MVT (Model-View-Template)**, implementado com o framework Django. Esse modelo segue o princípio da arquitetura em camadas, promovendo a separação de responsabilidades, a modularização do código e a facilidade na manutenção e evolução do sistema. 
 
 Assim como o padrão MVC, o MVT organiza a aplicação em três componentes principais: Model, View e Template, adaptando o papel do Controller para o próprio framework, simplificando a estrutura de comunicação entre as camadas. 
 
-O Model representa a camada de acesso e manipulação dos dados, concentrando a lógica de negócios e as regras de persistência da aplicação. No Apoia+, essa camada é responsável por gerenciar as informações armazenadas no banco de dados, como registros de usuários e ONGs, registros do status de doações e relatórios de eventos. 
+O **Model** representa a camada de acesso e manipulação dos dados, concentrando a lógica de negócios e as regras de persistência da aplicação. No Apoia+, essa camada é responsável por gerenciar as informações armazenadas no banco de dados, como registros de usuários e ONGs, registros do status de doações e relatórios de eventos. 
 
-A View é a camada que processa as requisições e retorna as respostas apropriadas ao usuário. Ela funciona como intermediária entre o Model e o Template, sendo responsável por aplicar as regras de negócio, processar formulários, realizar consultas no banco de dados e definir qual Template dever ser renderizado. Nesse caso, a View atua como o Controller do padrão MVC, gerenciando o fluxo de navegação do sistema, controlando ações como autenticação de usuários, criação de eventos e visualização de relatórios. 
+A **View** é a camada que processa as requisições e retorna as respostas apropriadas ao usuário. Ela funciona como intermediária entre o Model e o Template, sendo responsável por aplicar as regras de negócio, processar formulários, realizar consultas no banco de dados e definir qual Template dever ser renderizado. Nesse caso, a View atua como o Controller do padrão MVC, gerenciando o fluxo de navegação do sistema, controlando ações como autenticação de usuários, criação de eventos e visualização de relatórios. 
 
-Por último, a camada de Template é responsável pela apresentação das informações ao usuário final. Ela define a estrutura visual das páginas HTML, integrando dados enviados pela View e elementos de design definidos pela equipe para a interface. 
+Por último, a camada de **Template** é responsável pela apresentação das informações ao usuário final. Ela define a estrutura visual das páginas HTML, integrando dados enviados pela View e elementos de design definidos pela equipe para a interface. 
 
 ***
 
@@ -98,136 +98,135 @@ Por último, a camada de Template é responsável pela apresentação das inform
 
 ### 2.4 Metas e Restrições Arquiteturais 
 
-* **Disponibilidade:** O sistema deve visar uma disponibilidade de 99,5%, garantindo que os dados dos usuários estejam seguros, íntegros e acessíveis sempre que necessários[cite: 62].
-* **Padrões de codificação:** O código deve seguir as melhores práticas de codificação para Python/Django (PEP 8)[cite: 63].
-* **Manutenibilidade:** O sistema deve ser modular e possuir baixo acoplamento entre os componentes em visão de um projeto mais fácil de se manter e realizar alterações[cite: 64].
-* **Segurança:** As APIs desenvolvidas no backend Django devem seguir as melhores práticas possíveis e passar em testes como aqueles definidos pelo OWASP[cite: 65].
-* **Versionamento:** O padrão usado para realizar mudanças no código e utilizar a ferramenta Git eficientemente será o **Git Flow**[cite: 65].
+* **Disponibilidade:** O sistema deve visar uma disponibilidade de 99,5%, garantindo que os dados dos usuários estejam seguros, íntegros e acessíveis sempre que necessários .
+* **Padrões de codificação:** O código deve seguir as melhores práticas de codificação para Python/Django (PEP 8).
+* **Manutenibilidade:** O sistema deve ser modular e possuir baixo acoplamento entre os componentes em visão de um projeto mais fácil de se manter e realizar alterações.
+* **Segurança:** As APIs desenvolvidas no backend Django devem seguir as melhores práticas possíveis e passar em testes como aqueles definidos pelo OWASP
+* **Versionamento:** O padrão usado para realizar mudanças no código e utilizar a ferramenta Git eficientemente será o **Git Flow**.
 
-Todos os elementos mencionados contribuem para um desenvolvimento de software mais ágil e eficiente, no qual os membros da equipe permanecem alinhados na codificação e nas metas estabelecidas[cite: 66].
+Todos os elementos mencionados contribuem para um desenvolvimento de software mais ágil e eficiente, no qual os membros da equipe permanecem alinhados na codificação e nas metas estabelecidas. Em última instância, esses objetivos e restrições visam garantir um produto confiável e proporcionar uma experiência satisfatória ao usuário.
 
-### 2.5 Backlog do Produto (Escopo do Produto) [cite: 17, 68]
+### 2.5 Backlog do Produto (Escopo do Produto) 
 
-No escopo do projeto ‘Apoia+’, a equipe decidiu por uma aplicação mobile para Android com intuito de suprir a necessidade de voluntários e de Organizações Não Governamentais (ONGs) em causas humanitárias, mais especificamente em causas envolvendo indivíduos em situação de rua[cite: 69].
+No escopo do projeto ‘Apoia+’, a equipe decidiu por uma aplicação mobile para Android com intuito de suprir a necessidade de voluntários e de Organizações Não Governamentais (ONGs) em causas humanitárias, mais especificamente em causas envolvendo indivíduos em situação de rua.
 
-Assim, o produto de software tem como funcionalidades[cite: 70]:
+Assim, o produto de software tem como funcionalidades:
 
-* Sistema de cadastro e login[cite: 71];
-* Perfil público com informações pertinentes para voluntários e ONGs[cite: 72];
-* CRUD (Create, Read, Update e Delete) de eventos para ONGs[cite: 73];
-* Divulgação de eventos usando a localização do usuário como referência[cite: 74];
-* Possibilidade de se inscrever antecipadamente em eventos[cite: 75];
-* Geração de uma lista com participantes com presença confirmada no evento[cite: 76];
-* Mapa interativo para melhor experiência dos usuários[cite: 77].
+* Sistema de cadastro e login;
+* Perfil público com informações pertinentes para voluntários e ONGs;
+* CRUD (Create, Read, Update e Delete) de eventos para ONGs;
+* Divulgação de eventos usando a localização do usuário como referência;
+* Possibilidade de se inscrever antecipadamente em eventos;
+* Geração de uma lista com participantes com presença confirmada no evento;
+* Mapa interativo para melhor experiência dos usuários.
 
-Essas funcionalidades surgem para permitir uma maior integração entres voluntários e ONGs, assim centralizando distribuição de informações em apenas um canal de comunicação[cite: 78]. A partir disso, a escolha arquitetural do produto surge em razão da experiencia prévia da equipe, assim escolhendo modelo **MVC (Model–View–Controller)**, entretanto essa escolha juntamente com a decisão de adotar o *framework* Django, estabeleceu o padrão final sendo o **MTV (Model–Template–View)**, que é uma variação do tradicional MVC para o framework escolhido[cite: 80].
+Essas funcionalidades surgem para permitir uma maior integração entres voluntários e ONGs, assim centralizando distribuição de informações em apenas um canal de comunicação. A partir disso, a escolha arquitetural do produto surge em razão da experiencia prévia da equipe, assim escolhendo modelo **MVC (Model–View–Controller)**, entretanto essa escolha juntamente com a decisão de adotar o *framework* Django, estabeleceu o padrão final sendo o **MTV (Model–Template–View)**, que é uma variação do tradicional MVC para o framework escolhido.
 
-### 2.6 Visão Lógica [cite: 18, 82]
+### 2.6 Visão Lógica 
 
-O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas**[cite: 83]. A camada de Servidor (**Backend**) segue o padrão **MVT** (Model-View-Template) com Django [cite: 84], e a camada de Cliente (**Frontend**) é um aplicativo móvel (**Flutter**) que consome os dados do servidor[cite: 85].
+O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas**. A camada de Servidor (**Backend**) segue o padrão **MVT** (Model-View-Template) com Django , e a camada de Cliente (**Frontend**) é um aplicativo móvel (**Flutter**) que consome os dados do servidor.
 
-#### 2.6.1 Módulos do Sistema (Backend - Django) [cite: 86]
+#### 2.6.1 Módulos do Sistema (Backend - Django) 
 
 | Módulo (App) | Razão Lógica | Componentes Principais |
 | :--- | :--- | :--- |
-| **Autenticação** (`autenticacao`) [cite: 87] | Gerenciar cadastro, login e segurança [cite: 88] | Model: Usuário. View: RegisterView, LoginView[cite: 90, 91]. |
-| **ONGs** (`ongs`) [cite: 92] | Permite o CRUD de perfis de ONGs e a visualização pública [cite: 93] | Model: Usuário (tipo_usuario:ong). View: ONGView[cite: 95, 96]. |
-| **Gestão de Eventos** (`eventos`) [cite: 97] | Permite a criação de eventos pela ONG e a inscrição de voluntários [cite: 98] | Model: Evento, Participação. View: EventoView, ParticipacaoView[cite: 100, 101, 102]. |
-| **Administração** [cite: 103] | Gerencia usuários e configurações do sistema [cite: 104] | Utiliza o módulo `django.contrib.admin`[cite: 105]. |
+| **Autenticação** (`autenticacao`)  | Gerenciar cadastro, login e segurança  | Model: Usuário. View: RegisterView, LoginView. |
+| **ONGs** (`ongs`) | Permite o CRUD de perfis de ONGs e a visualização pública  | Model: Usuário (tipo_usuario:ong). View: ONGView. |
+| **Gestão de Eventos** (`eventos`)  | Permite a criação de eventos pela ONG e a inscrição de voluntários  | Model: Evento, Participação. View: EventoView, ParticipacaoView. |
+| **Administração**  | Gerencia usuários e configurações do sistema [ | Utiliza o módulo `django.contrib.admin`. |
 
-#### 2.6.2 Módulos do Sistema (Frontend - Flutter) [cite: 106]
+#### 2.6.2 Módulos do Sistema (Frontend - Flutter) 
 
 | Módulo (App) | Telas | Serviços |
 | :--- | :--- | :--- |
-| **Autenticação** [cite: 107] | TelaLogin, TelaCadastroUsuario, TelaCadastroONG [cite: 108] | **AuthService** (chama HTTP para LoginView e RegisterView)[cite: 110]. |
-| **ONGs e Eventos** [cite: 111] | Home, TelaListarEventos, TelaListarONGs, TelaDetalharEvento, TelaPerfilONG, TelaGerenciarEventos [cite: 112] | **EventoService** (Chama /eventos), **ONGService** (Chama /ongs)[cite: 114, 115]. |
+| **Autenticação**  | TelaLogin, TelaCadastroUsuario, TelaCadastroONG  | **AuthService** (chama HTTP para LoginView e RegisterView). |
+| **ONGs e Eventos**  | Home, TelaListarEventos, TelaListarONGs, TelaDetalharEvento, TelaPerfilONG, TelaGerenciarEventos  | **EventoService** (Chama /eventos), **ONGService** (Chama /ongs). |
 
-#### 2.6.3 Comunicação entre Módulos (Interfaces) [cite: 116]
+#### 2.6.3 Comunicação entre Módulos (Interfaces) 
 
-* **APIs REST:** O Backend (Django) expõe endpoints RESTful (ex: `/api/v1/eventos`) que o Frontend (Flutter) consome via requisição HTTPS[cite: 117].
-* **Banco de Dados:** PostgreSQL é acessado **apenas** pelo Backend (Django). O Frontend (Flutter) nunca se comunica diretamente com o banco de dados[cite: 118, 119].
+* **APIs REST:** O Backend (Django) expõe endpoints RESTful (ex: `/api/v1/eventos`) que o Frontend (Flutter) consome via requisição HTTPS.
+* **Banco de Dados:** PostgreSQL é acessado **apenas** pelo Backend (Django). O Frontend (Flutter) nunca se comunica diretamente com o banco de dados.
 
-#### 2.6.4 Diagrama de Classes [cite: 120]
+#### 2.6.4 Diagrama de Classes 
 
-As entidades centrais são **Usuário**, **ONG**, **Evento** e **Participação**[cite: 127].
+As entidades centrais são **Usuário**, **ONG**, **Evento** e **Participação**.
 
-* A classe **Usuário** é a base para qualquer pessoa no sistema[cite: 128].
-* Existe uma relação **um-para-um (1:1)** entre **Usuário** e **ONG**, onde o Usuário responsável é vinculado à ONG através do atributo `id_responsavel`[cite: 129, 130, 131].
-* Um usuário do tipo ONG pode cadastrar múltiplos **Eventos** (**1:N**)[cite: 132].
-* A relação **muitos-para-muitos (N:M)** entre **Usuários** e **Eventos** é resolvida através da classe associativa **Participacao**[cite: 133, 134].
-* A classe **Participacao** conecta Usuário e Evento (usando `id_usuario`, `id_evento`) e armazena atributos da inscrição, como `status_confirmacao`[cite: 135].
+* A classe **Usuário** é a base para qualquer pessoa no sistema.
+* Existe uma relação **um-para-um (1:1)** entre **Usuário** e **ONG**, onde o Usuário responsável é vinculado à ONG através do atributo `id_responsavel`.
+* Um usuário do tipo ONG pode cadastrar múltiplos **Eventos** (**1:N**).
+* A relação **muitos-para-muitos (N:M)** entre **Usuários** e **Eventos** é resolvida através da classe associativa **Participacao**.
+* A classe **Participacao** conecta Usuário e Evento (usando `id_usuario`, `id_evento`) e armazena atributos da inscrição, como `status_confirmacao`.
 
-#### 2.6.5 Diagrama de Pacotes [cite: 136]
+#### 2.6.5 Diagrama de Pacotes 
 
-O sistema é estruturado segundo uma arquitetura em camadas, dividida em três principais níveis: Camada de Apresentação, Camada de Lógica de Negócios e Camada de Dados[cite: 137].
+O sistema é estruturado segundo uma arquitetura em camadas, dividida em três principais níveis: Camada de Apresentação, Camada de Lógica de Negócios e Camada de Dados.
 
 | Camada | Responsabilidade | Pacotes Principais |
 | :--- | :--- | :--- |
-| **Apresentação** [cite: 139] | Interface do sistema com o usuário (telas e componentes visuais) [cite: 140] | TelaLogin, TelaCadastroUsuário, TelaHome, TelaListaEventos, TelaGerenciarEventos, etc.[cite: 142, 143, 144, 145, 146, 147, 148]. |
-| **Lógica de Negócios** [cite: 149] | Centraliza regras, processamentos, validações e controles que definem o comportamento do sistema [cite: 150, 151] | Controle de Usuário, Controle de Evento, CRUD de Perfis[cite: 153, 154, 155]. |
-| **Dados** [cite: 156] | Armazenamento, recuperação e persistência das informações [cite: 157] | **PostgreSQL** (SGBD Relacional) [cite: 160], **Django** (ORM e integração)[cite: 161]. |
+| **Apresentação**  | Interface do sistema com o usuário (telas e componentes visuais)  | TelaLogin, TelaCadastroUsuário, TelaHome, TelaListaEventos, TelaGerenciarEventos, etc. |
+| **Lógica de Negócios**  | Centraliza regras, processamentos, validações e controles que definem o comportamento do sistema  | Controle de Usuário, Controle de Evento, CRUD de Perfis. |
+| **Dados**  | Armazenamento, recuperação e persistência das informações  | **PostgreSQL** (SGBD Relacional) , **Django** (ORM e integração). |
 
-### 2.7 Visão de Dados (MER) [cite: 19, 165]
+### 2.7 Visão de Dados (MER) 
 
-O modelo entidade-relacionamento representa a estrutura lógica dos dados do software Apoia+, descrevendo as entidades do sistema e a cardinalidade entre elas[cite: 166].
+O modelo entidade-relacionamento representa a estrutura lógica dos dados do software Apoia+, descrevendo as entidades do sistema e a cardinalidade entre elas.
 
-#### Entidades do Sistema [cite: 167]
-
+#### Entidades do Sistema 
 | Entidades | Descrição |
 | :--- | :--- |
-| **Usuário** | Representa os usuários cadastrados (ONGs ou Voluntários)[cite: 168]. |
-| **Evento** | Armazena informações sobre os eventos criados (nome, data, vagas, etc.)[cite: 168]. |
-| **Participação** | Representa o vínculo e é o intermediário entre um usuário e um evento[cite: 168]. |
+| **Usuário** | Representa os usuários cadastrados (ONGs ou Voluntários). |
+| **Evento** | Armazena informações sobre os eventos criados (nome, data, vagas, etc.). |
+| **Participação** | Representa o vínculo e é o intermediário entre um usuário e um evento. |
 
-#### Relação e Cardinalidade [cite: 169]
+#### Relação e Cardinalidade 
 
 | Entidade A | Relação | Entidade B | Cardinalidade |
 | :--- | :--- | :--- | :--- |
-| Usuário | Cria | Evento | 1:N (uma ONG cria/edita vários eventos) [cite: 170] |
-| Usuário | Participa | Evento | N:N (um voluntário participa de vários eventos, um evento tem vários voluntários) [cite: 170] |
-| Participação | Associa | Usuário e Evento | Resolve a relação N:N (intermediário) [cite: 170] |
+| Usuário | Cria | Evento | 1:N (uma ONG cria/edita vários eventos) |
+| Usuário | Participa | Evento | N:N (um voluntário participa de vários eventos, um evento tem vários voluntários) |
+| Participação | Associa | Usuário e Evento | Resolve a relação N:N (intermediário) |
 
-#### Atributos das Tabelas [cite: 173]
+#### Atributos das Tabelas 
 
-##### Tabela: `usuario` [cite: 174, 175]
-
-| Atributos | Tipo de Dados | Chave | Descrição |
-| :--- | :--- | :--- | :--- |
-| `id_usuario` | INT | PK | Identificador único do usuário [cite: 176] |
-| `nome` | VARCHAR(50) | | Nome do usuário [cite: 176] |
-| `email` | VARCHAR(50) | | E-mail utilizado para login [cite: 176] |
-| `tipo_usuario` | VARCHAR(20) | | Define o tipo de usuário (voluntario ou ong) [cite: 176] |
-| `descricao_ong` | TEXT | | Descrição institucional da ONG (apenas para ONGs) [cite: 176] |
-| `necessidades_ong` | TEXT | | Necessidades atuais da ONG (apenas para ONGs) [cite: 176] |
-| `ong_id` | INT | FK $\rightarrow$ Usuário.id\_usuario | Identifica a ONG responsável pelo evento [cite: 178] |
-
-##### Tabela: `evento` [cite: 174, 177]
+##### Tabela: `usuario` 
 
 | Atributos | Tipo de Dados | Chave | Descrição |
 | :--- | :--- | :--- | :--- |
-| `id_evento` | INT | PK | Identificador único do evento [cite: 178] |
-| `nome_evento` | VARCHAR(150) | | Nome do evento [cite: 178] |
-| `data_evento` | DATE | | Data de realização do evento [cite: 178] |
-| `vagas_total` | INT | | Número total de vagas disponíveis [cite: 178] |
-| `numero_participantes` | INT | | Quantidade atual de participantes inscritos [cite: 178] |
+| `id_usuario` | INT | PK | Identificador único do usuário  |
+| `nome` | VARCHAR(50) | | Nome do usuário  |
+| `email` | VARCHAR(50) | | E-mail utilizado para login  |
+| `tipo_usuario` | VARCHAR(20) | | Define o tipo de usuário (voluntario ou ong)  |
+| `descricao_ong` | TEXT | | Descrição institucional da ONG (apenas para ONGs)  |
+| `necessidades_ong` | TEXT | | Necessidades atuais da ONG (apenas para ONGs)  |
+| `ong_id` | INT | FK $\rightarrow$ Usuário.id\_usuario | Identifica a ONG responsável pelo evento |
 
-##### Tabela: `participacao` [cite: 174, 179]
+##### Tabela: `evento` 
 
 | Atributos | Tipo de Dados | Chave | Descrição |
 | :--- | :--- | :--- | :--- |
-| `id_participacao` | INT | PK | Identificador único da participação [cite: 180] |
-| `usuario_id` | INT | FK $\rightarrow$ Usuário.id\_usuario | Identifica o voluntário participante [cite: 180] |
-| `evento_id` | INT | FK $\rightarrow$ Evento.id\_evento | Identifica o evento em que o voluntário se inscreveu [cite: 180] |
-| `data_participacao` | DATE | | Data da inscrição ou confirmação de presença [cite: 180] |
+| `id_evento` | INT | PK | Identificador único do evento  |
+| `nome_evento` | VARCHAR(150) | | Nome do evento |
+| `data_evento` | DATE | | Data de realização do evento  |
+| `vagas_total` | INT | | Número total de vagas disponíveis  |
+| `numero_participantes` | INT | | Quantidade atual de participantes inscritos  |
 
-### 2.8 Visão de Implantação [cite: 20, 181]
+##### Tabela: `participacao` 
 
-O software será implantado em uma **infraestrutura de nuvem** para garantir alta disponibilidade, segurança e escalabilidade[cite: 182].
+| Atributos | Tipo de Dados | Chave | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_participacao` | INT | PK | Identificador único da participação  |
+| `usuario_id` | INT | FK $\rightarrow$ Usuário.id\_usuario | Identifica o voluntário participante |
+| `evento_id` | INT | FK $\rightarrow$ Evento.id\_evento | Identifica o evento em que o voluntário se inscreveu |
+| `data_participacao` | DATE | | Data da inscrição ou confirmação de presença  |
 
-* **Servidor de Aplicação:** Será hospedado em um ambiente **Linux**, utilizando provedores como **Render, Railway ou AWS**, que suportam nativamente Django e PostgreSQL[cite: 183].
-* **Backend:** Desenvolvido com **Django** (Python) em conjunto com **Django Rest Framework (DRF)**, fornecendo uma API RESTful robusta e segura[cite: 185, 186].
-* **Frontend:** Desenvolvido em **Flutter** (Dart), um framework multiplataforma para criar interfaces responsivas e consistentes em dispositivos móveis (Android e iOS) e web (PWA)[cite: 188, 189].
-* **Banco de Dados:** Utilizará **PostgreSQL**, hospedado em uma instância separada na nuvem para maior segurança e isolamento[cite: 190, 191].
+### 2.8 Visão de Implantação 
+
+O software será implantado em uma **infraestrutura de nuvem** para garantir alta disponibilidade, segurança e escalabilidade.
+
+* **Servidor de Aplicação:** Será hospedado em um ambiente **Linux**, utilizando provedores como **Render, Railway ou AWS**, que suportam nativamente Django e PostgreSQL.
+* **Backend:** Desenvolvido com **Django** (Python) em conjunto com **Django Rest Framework (DRF)**, fornecendo uma API RESTful robusta e segura.
+* **Frontend:** Desenvolvido em **Flutter** (Dart), um framework multiplataforma para criar interfaces responsivas e consistentes em dispositivos móveis (Android e iOS) e web (PWA).
+* **Banco de Dados:** Utilizará **PostgreSQL**, hospedado em uma instância separada na nuvem para maior segurança e isolamento.
 
 A arquitetura final é composta por três camadas principais:
 
