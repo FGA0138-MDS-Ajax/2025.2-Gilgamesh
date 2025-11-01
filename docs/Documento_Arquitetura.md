@@ -168,8 +168,6 @@ As entidades centrais são **Usuário**, **ONG**, **Evento** e **Participação*
 * A relação **muitos-para-muitos (N:M)** entre **Usuários** e **Eventos** é resolvida através da classe associativa **Participacao**.
 * A classe **Participacao** conecta Usuário e Evento (usando `id_usuario`, `id_evento`) e armazena atributos da inscrição, como `status_confirmacao`.
 
-Claro! 😊 Aqui está o seu texto com a **formatação em Markdown corrigida**, mantendo exatamente o mesmo conteúdo, apenas com melhor estrutura e legibilidade:
-
 ---
 
 ### 2.6.5 Diagrama de Pacotes
