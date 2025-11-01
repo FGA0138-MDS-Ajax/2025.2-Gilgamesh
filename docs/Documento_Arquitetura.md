@@ -1,230 +1,260 @@
-\[Apoia+\]
+# Documento de Arquitetura 
 
-**Documento de Arquitetura**
+## Visão Geral
 
-Versão \[1.1\]
+| Campo | Valor |
+| :--- | :--- |
+| **Projeto** | Apoia+  |
+| **Disciplina** | Métodos de Desenvolvimento de Software (MDS)  |
+| **Versão** | 1.0  |
 
-**Histórico de Revisão**
+## Histórico de Revisão 
 
-|          |            |               |               |
-|----------|------------|---------------|---------------|
-| **Data** | **Versão** | **Descrição** | **Autor(es)** |
-|     30/10     |     1.0       |      Tópico 1.1          |        Ester       |
-|     30/10     |     1.0       |       Tópico 1.2         |        Artur       |
-|     30/10     |     1.0       |     Tópico 2.1, 2.1, 2.8           |      Edson         |
-|     30/10     |     1.0       |      Tópico 2.3          |       Lucas        |
-|     30/10     |     1.0       |      Tópico 2.4          |       Guilherme Carvalho        |
-|     31/10     |     1.0       |      Tópico 2.6          |    Edson e Lucas           |
-|     31/10     |     1.0       |     Tópico 2.7          |      Guilherme Carvalho         |
-|     31/10     |     1.0       |     Tópico 2.8           |     Artur e Ester          |
-|     31/10     |     1.0       |     Revisão ABNT           | Maria Luana              |
+| Data | Versão | Descrição | Autor(es) |
+| :--- | :--- | :--- | :--- |
+| 30/10 | 1.0 | Tópico 1.1 | Ester |
+| 30/10 | 1.0 | Tópico 1.2 | Artur  |
+| 30/10 | 1.0 | Tópicos 2.1, 2.2, 2.8 | Edson  |
+| 30/10 | 1.0 | Tópico 2.3 | Lucas  |
+| 30/10 | 1.0 | Tópico 2.4 | Guilherme Carvalho  |
+| 31/10 | 1.0 | Tópico 2.6 | Edson e Lucas  |
+| 31/10 | 1.0 | Tópico 2.7 | Guilherme Carvalho  |
+| 31/10 | 1.0 | Tópico 2.8 | Artur e Ester  |
+| 31/10 | 1.0 | Revisão ABNT | Maria Luana  |
 
-Autores:
+## Autores 
 
-|               |          |                                            |                                            |
-|---------------|----------|--------------------------------------------|--------------------------------------------|
-| **Matrícula** | **Nome** | **Desccrição do papel assumido na equipe** | % de contribuição ao trabalho (\*)|
-|      232024527         |     Artur     |                                            |                                            |
-|    232025730           |    Edson      |                                            |                                            |
-|      241012211          |    Ester       |                                            |                                            |
-|      241011822          |    Guilherme Carvalho       |                                            |                                            |
-|      231026456          |    Lucas       |                                            |                                            |
-|      231012002          |   Luis Fernando      |                                            |                                            |
-|      241011448          |    Maria Luana      |                                            |                                            |
-|      190129344          |    Paulo Vinícius       |                                            |                                            |
-|      241011878         |    Thauany       |                                            |                                            |
-|      241012392        |    Vinícius      |                                            |                                            |
+| Matrícula | Nome | Descrição do papel assumido na equipe | % de contribuição ao trabalho (*) |
+| :--- | :--- | :--- | :--- |
+| 232024527 | Artur | |  |
+| 232025730 | Edson | |  |
+| 241012211 | Ester | |  |
+| 241011822 | Guilherme C | |  |
+| | Guilherme | |  |
+| 231026456 | Lucas | |  |
+| 231012002 | Luis Fernando | |  |
+| 241011448 | Maria Luana | |  |
+| 190129344 | Paulo Vinicius | |  |
+| 241011878 | Thauany | |  |
+| 241012392 | Vinicius | |  |
 
+## 1. Introdução 
 
-***Lembre-se que o alinhamento de documentos entre entregas Aprender3 e
-GIthub é da responsabilide da equipe. Assim sendo, faz parte da
-avaliação da entrega.***
+### 1.1 Propósito 
 
-**Sumário**
+Este documento descreve a visão arquitetural abrangente do Apoia+, desenvolvido como parte de um projeto acadêmico da disciplina de Métodos de Desenvolvimento de Software (MDS), no segundo semestre de 2025. O propósito é registrar as decisões arquiteturais tomadas durante o planejamento e implementação do sistema, servindo como um guia para desenvolvedores e testadores.
 
-[1 Introdução [4](#introdução)](#introdução)
+Ele descreve as escolhas tecnológicas, os padrões de design e a decomposição de componentes adotados para atender aos requisitos específicos de conexão entre voluntários e ONGs no DF, facilitando a organização e participação em eventos para um desenvolvimento coeso e um produto escalável.
 
-[1.1 Propósito [4](#propósito)](#propósito)
+### 1.2 Escopo
 
-[1.2 Escopo [4](#escopo)](#escopo)
+O presente documento descreve a arquitetura do sistema “Apoia+”, uma aplicação móvel desenvolvida com o objetivo de conectar pessoas dispostas a doar para instituições sociais e ONGs cadastradas, promovendo o engajamento solidário e facilitando o acesso a campanhas de apoio em diferentes regiões. O sistema busca centralizar informações sobre campanhas ativas, simplificar o processo de doação e fortalecer a visibilidade das organizações sociais, alinhando-se a objetivos de desenvolvimento sustentável, como redução das desigualdades e erradicação da pobreza.
 
-[2 Representação Arquitetural
-[4](#representação-arquitetural)](#representação-arquitetural)
+O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessível, responsiva e intuitiva, compatível tanto com dispositivos móveis quanto navegadores web, e que permita30:
 
-[2.1 Definições [4](#definições)](#definições)
+* O cadastro e autenticação de usuários (doadores e representantes de ONGs);
+* O cadastro e a gestão de ONGs e campanhas de arrecadação;
+* A busca e visualização de pontos de apoio e campanhas próximas;
+* O acompanhamento do status das doações;
+* A visualização de relatórios e indicadores sociais, facilitando a transparência e o engajamento;
+* A comunicação entre usuários e ONGs por meio de um sistema de mensagens ou contato direto;
+* A criação e divulgação de eventos por parte das ONGs cadastradas, com a possibilidade de usuários visualizarem e escolherem participar ou não.
 
-[2.2 Justifique sua escolha.
-[4](#justifique-sua-escolha.)](#justifique-sua-escolha.)
+Dessa forma, o Apoia+ visa criar um ambiente digital de impacto social positivo, promovendo a solidariedade e tornando o processo de doação mais simples, transparente e acessível a todos.
 
-[2.3 Detalhamento [4](#detalhamento)](#detalhamento)
+## 2. Representação Arquitetural 
 
-[2.4 Metas e restrições arquiteturais
-[4](#metas-e-restrições-arquiteturais)](#metas-e-restrições-arquiteturais)
+### 2.1 Definições
 
-[2.5 Backlog do Produto (escopo do produto)
-[4](#backlog-do-produto-escopo-do-produto)](#backlog-do-produto-escopo-do-produto)
+O sistema seguirá uma arquitetura em camadas, com o modelo arquitetural escolhido **MVT (Model-View-Template)** com o Framework **Django**.
 
-[2.6 Visão lógica \<relembrem o material da Profa. Milene Serrano\>
-[4](#visão-lógica-relembrem-o-material-da-profa.-milene-serrano)](#visão-lógica-relembrem-o-material-da-profa.-milene-serrano)
+### 2.2 Justificativa 
 
-[2.7 Visão de Dados (MER) [5](#visão-de-dados-mer)](#visão-de-dados-mer)
+A escolha da arquitetura em MVT é uma consequência direta da adoção dos frameworks Django e Flutter, que foram selecionados com base nas necessidades do projeto e no plano de capacitação da equipe.  
 
-[2.8 Visão de Implantação \<relembrem o material da Profa. Milene
-Serrano\>
-[5](#visão-de-implantação-relembrem-o-material-da-profa.-milene-serrano)](#visão-de-implantação-relembrem-o-material-da-profa.-milene-serrano)
+Derivada da arquitetura MVC, que possui como princípios a organização e a reutilização de código, a abordagem MVT do Django é adequada aos requisitos de nosso produto. Será principalmente por meio do Django que a lógica de negócios (Controller) e a estrutura de dados (Model) serão implementadas, o que é ideal para construir a API RESTful que o sistema necessita. 
 
-[2.9 Restrições adicionais
-[5](#restrições-adicionais)](#restrições-adicionais)
+Concluímos que esta arquitetura de backend se integra bem ao cliente desenvolvido em Flutter, que consumirá os endpoints (rotas da API) gerados pelo Django. 
 
-[3 Bibliografia [5](#bibliografia)](#bibliografia)
+Dessa forma, acreditamos que essa escolha será vantajosa não apenas em termos de organização, mas também por facilitar o desenvolvimento, a manutenção, os testes e as possíveis modificações futuras no projeto. 
 
-# Introdução
+### 2.3 Detalhamento 
 
-## Propósito
+O padrão arquitetural adotado para o desenvolvimento do sistema Apoia+ é o MVT (Model-View-Template), implementado com o framework Django. Esse modelo segue o princípio da arquitetura em camadas, promovendo a separação de responsabilidades, a modularização do código e a facilidade na manutenção e evolução do sistema. 
 
-*Este documento descreve a visão arquitetural abrangente do Apoia+, desenvolvido como parte de um projeto acadêmico da disciplina de Métodos de Desenvolvimento de Software (MDS), no segundo semestre de 2025. O propósito é registrar as decisões arquiteturais tomadas durante o planejamento e implementação do sistema, servindo como um guia para desenvolvedores e testadores. Ele descreve as escolhas tecnológicas, os padrões de design e a decomposição de componentes adotados para atender aos requisitos específicos de conexão entre voluntários e ONGs no DF, facilitando a organização e participação em eventos para um desenvolvimento coeso e um produto escalável.*
+Assim como o padrão MVC, o MVT organiza a aplicação em três componentes principais: Model, View e Template, adaptando o papel do Controller para o próprio framework, simplificando a estrutura de comunicação entre as camadas. 
 
-## Escopo
+O Model representa a camada de acesso e manipulação dos dados, concentrando a lógica de negócios e as regras de persistência da aplicação. No Apoia+, essa camada é responsável por gerenciar as informações armazenadas no banco de dados, como registros de usuários e ONGs, registros do status de doações e relatórios de eventos. 
 
-O presente documento descreve a arquitetura do sistema “Apoia+”, uma aplicação móvel desenvolvida com o objetivo de conectar pessoas dispostas a doar para instituições sociais e ONGs cadastradas, promovendo o engajamento solidário e facilitando o acesso a campanhas de apoio em diferentes regiões. 
+A View é a camada que processa as requisições e retorna as respostas apropriadas ao usuário. Ela funciona como intermediária entre o Model e o Template, sendo responsável por aplicar as regras de negócio, processar formulários, realizar consultas no banco de dados e definir qual Template dever ser renderizado. Nesse caso, a View atua como o Controller do padrão MVC, gerenciando o fluxo de navegação do sistema, controlando ações como autenticação de usuários, criação de eventos e visualização de relatórios. 
 
-O sistema busca centralizar informações sobre campanhas ativas, simplificar o processo de doação e fortalecer a visibilidade das organizações sociais, alinhando-se a objetivos de desenvolvimento sustentável, como redução das desigualdades e erradicação da pobreza. 
+Por último, a camada de Template é responsável pela apresentação das informações ao usuário final. Ela define a estrutura visual das páginas HTML, integrando dados enviados pela View e elementos de design definidos pela equipe para a interface. 
 
-O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessível, responsiva e intuitiva, compatível tanto com dispositivos móveis quanto navegadores web, e que permita: 
+***
 
-  -O cadastro e autenticação de usuários (doadores e representantes de ONGs); 
+> **Nota:** Se você tiver a Figura 1 e a Figura 2, adicione o caminho da imagem aqui (ex: `![Diagrama de Arquitetura](img/figura1.png)`).
 
-  -O cadastro e a gestão de ONGs e campanhas de arrecadação; 
+***
 
-  -A busca e visualização de pontos de apoio e campanhas próximas; 
+### 2.4 Metas e Restrições Arquiteturais 
 
-  -O acompanhamento do status das doações; 
+* **Disponibilidade:** O sistema deve visar uma disponibilidade de 99,5%, garantindo que os dados dos usuários estejam seguros, íntegros e acessíveis sempre que necessários[cite: 62].
+* **Padrões de codificação:** O código deve seguir as melhores práticas de codificação para Python/Django (PEP 8)[cite: 63].
+* **Manutenibilidade:** O sistema deve ser modular e possuir baixo acoplamento entre os componentes em visão de um projeto mais fácil de se manter e realizar alterações[cite: 64].
+* **Segurança:** As APIs desenvolvidas no backend Django devem seguir as melhores práticas possíveis e passar em testes como aqueles definidos pelo OWASP[cite: 65].
+* **Versionamento:** O padrão usado para realizar mudanças no código e utilizar a ferramenta Git eficientemente será o **Git Flow**[cite: 65].
 
-  -A visualização de relatórios e indicadores sociais, facilitando a transparência e o engajamento; 
+Todos os elementos mencionados contribuem para um desenvolvimento de software mais ágil e eficiente, no qual os membros da equipe permanecem alinhados na codificação e nas metas estabelecidas[cite: 66].
 
-  -A comunicação entre usuários e ONGs por meio de um sistema de mensagens ou contato direto. 
+### 2.5 Backlog do Produto (Escopo do Produto) [cite: 17, 68]
 
-  -A criação e divulgação de eventos por parte das ONGs cadastradas, com a possibilidade de usuários visualizarem e escolherem participar ou não; 
+No escopo do projeto ‘Apoia+’, a equipe decidiu por uma aplicação mobile para Android com intuito de suprir a necessidade de voluntários e de Organizações Não Governamentais (ONGs) em causas humanitárias, mais especificamente em causas envolvendo indivíduos em situação de rua[cite: 69].
 
-Dessa forma, o Apoia+ visa criar um ambiente digital de impacto social positivo, promovendo a solidariedade e tornando o processo de doação mais simples, transparente e acessível a todos. 
+Assim, o produto de software tem como funcionalidades[cite: 70]:
 
-# Representação Arquitetural
+* Sistema de cadastro e login[cite: 71];
+* Perfil público com informações pertinentes para voluntários e ONGs[cite: 72];
+* CRUD (Create, Read, Update e Delete) de eventos para ONGs[cite: 73];
+* Divulgação de eventos usando a localização do usuário como referência[cite: 74];
+* Possibilidade de se inscrever antecipadamente em eventos[cite: 75];
+* Geração de uma lista com participantes com presença confirmada no evento[cite: 76];
+* Mapa interativo para melhor experiência dos usuários[cite: 77].
 
-## Definições
+Essas funcionalidades surgem para permitir uma maior integração entres voluntários e ONGs, assim centralizando distribuição de informações em apenas um canal de comunicação[cite: 78]. A partir disso, a escolha arquitetural do produto surge em razão da experiencia prévia da equipe, assim escolhendo modelo **MVC (Model–View–Controller)**, entretanto essa escolha juntamente com a decisão de adotar o *framework* Django, estabeleceu o padrão final sendo o **MTV (Model–Template–View)**, que é uma variação do tradicional MVC para o framework escolhido[cite: 80].
 
-O sistema seguirá uma arquitetura *\<nomeie a decisão do grupo a
-respeito do estilo arquitetural escolhido na proposta de solução\>*
+### 2.6 Visão Lógica [cite: 18, 82]
 
-## Justifique sua escolha.  {#justifique-sua-escolha.}
+O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas**[cite: 83]. A camada de Servidor (**Backend**) segue o padrão **MVT** (Model-View-Template) com Django [cite: 84], e a camada de Cliente (**Frontend**) é um aplicativo móvel (**Flutter**) que consome os dados do servidor[cite: 85].
 
-\<*A justificativa deve levar em conta o que for pertinente nos
-documentos Visão do produto e do projeto, e Declaração de escopo do
-produto, já entregues\>.*
+#### 2.6.1 Módulos do Sistema (Backend - Django) [cite: 86]
 
-- *Esses documentos podem ser referenciados para evitar redundâncias,
-  mas as partes deles usadas nas definições das arquiteturas devem ser
-  ressaltadas, nas referências usadas de forma inequívoca.*
+| Módulo (App) | Razão Lógica | Componentes Principais |
+| :--- | :--- | :--- |
+| **Autenticação** (`autenticacao`) [cite: 87] | Gerenciar cadastro, login e segurança [cite: 88] | Model: Usuário. View: RegisterView, LoginView[cite: 90, 91]. |
+| **ONGs** (`ongs`) [cite: 92] | Permite o CRUD de perfis de ONGs e a visualização pública [cite: 93] | Model: Usuário (tipo_usuario:ong). View: ONGView[cite: 95, 96]. |
+| **Gestão de Eventos** (`eventos`) [cite: 97] | Permite a criação de eventos pela ONG e a inscrição de voluntários [cite: 98] | Model: Evento, Participação. View: EventoView, ParticipacaoView[cite: 100, 101, 102]. |
+| **Administração** [cite: 103] | Gerencia usuários e configurações do sistema [cite: 104] | Utiliza o módulo `django.contrib.admin`[cite: 105]. |
 
-## Detalhamento
+#### 2.6.2 Módulos do Sistema (Frontend - Flutter) [cite: 106]
 
-*\<Detalhe sua escolha, acrescentando uma figura esquemática que
-represente o estilo arquitetural escolhido.  
-Instancie os elementos do estilo arquiterural, conforme as suas escolhas
-para o sistema sendo desenvolvido pela equipe\>.*
+| Módulo (App) | Telas | Serviços |
+| :--- | :--- | :--- |
+| **Autenticação** [cite: 107] | TelaLogin, TelaCadastroUsuario, TelaCadastroONG [cite: 108] | **AuthService** (chama HTTP para LoginView e RegisterView)[cite: 110]. |
+| **ONGs e Eventos** [cite: 111] | Home, TelaListarEventos, TelaListarONGs, TelaDetalharEvento, TelaPerfilONG, TelaGerenciarEventos [cite: 112] | **EventoService** (Chama /eventos), **ONGService** (Chama /ongs)[cite: 114, 115]. |
 
-*Além disso, deixe claro na figura e nos comentários explicativos dela
-as responsabilidades dos elementos constituintes do estilo arquiteturarl
-escolhido e as comunicaçoes entre eles.*
+#### 2.6.3 Comunicação entre Módulos (Interfaces) [cite: 116]
 
-*Deve ser uma imagem que reflita uma visão geral da arquitetura,
-tecnologias, protocolos de comunicação.*
+* **APIs REST:** O Backend (Django) expõe endpoints RESTful (ex: `/api/v1/eventos`) que o Frontend (Flutter) consome via requisição HTTPS[cite: 117].
+* **Banco de Dados:** PostgreSQL é acessado **apenas** pelo Backend (Django). O Frontend (Flutter) nunca se comunica diretamente com o banco de dados[cite: 118, 119].
 
-## Metas e restrições arquiteturais
+#### 2.6.4 Diagrama de Classes [cite: 120]
 
-*Identifique-as se existirem.Exemplos de metas e restrições podem ser:*
+As entidades centrais são **Usuário**, **ONG**, **Evento** e **Participação**[cite: 127].
 
-- *O sistema deve responder a 95% das consultas em até 2 segundos*
+* A classe **Usuário** é a base para qualquer pessoa no sistema[cite: 128].
+* Existe uma relação **um-para-um (1:1)** entre **Usuário** e **ONG**, onde o Usuário responsável é vinculado à ONG através do atributo `id_responsavel`[cite: 129, 130, 131].
+* Um usuário do tipo ONG pode cadastrar múltiplos **Eventos** (**1:N**)[cite: 132].
+* A relação **muitos-para-muitos (N:M)** entre **Usuários** e **Eventos** é resolvida através da classe associativa **Participacao**[cite: 133, 134].
+* A classe **Participacao** conecta Usuário e Evento (usando `id_usuario`, `id_evento`) e armazena atributos da inscrição, como `status_confirmacao`[cite: 135].
 
-- *Deve seguir o padrão XHZ para API's.*
+#### 2.6.5 Diagrama de Pacotes [cite: 136]
 
-- *Deve seguir o padrão "tal" de codificação. Caso o grupo desenvolvolva
-  um padrão de codificação específico, ele entre como anexo com todas as
-  suas diretrizes.*
+O sistema é estruturado segundo uma arquitetura em camadas, dividida em três principais níveis: Camada de Apresentação, Camada de Lógica de Negócios e Camada de Dados[cite: 137].
 
-- *Outros elementos de importância e interesse para desenvolvedores*
+| Camada | Responsabilidade | Pacotes Principais |
+| :--- | :--- | :--- |
+| **Apresentação** [cite: 139] | Interface do sistema com o usuário (telas e componentes visuais) [cite: 140] | TelaLogin, TelaCadastroUsuário, TelaHome, TelaListaEventos, TelaGerenciarEventos, etc.[cite: 142, 143, 144, 145, 146, 147, 148]. |
+| **Lógica de Negócios** [cite: 149] | Centraliza regras, processamentos, validações e controles que definem o comportamento do sistema [cite: 150, 151] | Controle de Usuário, Controle de Evento, CRUD de Perfis[cite: 153, 154, 155]. |
+| **Dados** [cite: 156] | Armazenamento, recuperação e persistência das informações [cite: 157] | **PostgreSQL** (SGBD Relacional) [cite: 160], **Django** (ORM e integração)[cite: 161]. |
 
-*Todos eles devem ser explicados e justificdos*
+### 2.7 Visão de Dados (MER) [cite: 19, 165]
 
-## Backlog do Produto (escopo do produto)
+O modelo entidade-relacionamento representa a estrutura lógica dos dados do software Apoia+, descrevendo as entidades do sistema e a cardinalidade entre elas[cite: 166].
 
-*\<Não se trata aqui de repetir o detalhamento do que já foi colocado no
-Backlog do Produto no Zenhub, mas sim, de explicar em linhas gerais o
-funcionamento do sistema. Para tanto, isso precisa estar diretamente
-refletido no backlog do produto, dinâmico, mantido na ferramenta
-zenhub.\>*
+#### Entidades do Sistema [cite: 167]
 
-*Um, ponto importante aqui é ressaltar requisitos que tenham contribuído
-na escolha do estilo arquitetural escolhido pela equipe. Neste sentido
-vale, inclusive, citar a experiência e conhecimento de integrantes da
-quipe, detalhes técnicos, etc\>.*
+| Entidades | Descrição |
+| :--- | :--- |
+| **Usuário** | Representa os usuários cadastrados (ONGs ou Voluntários)[cite: 168]. |
+| **Evento** | Armazena informações sobre os eventos criados (nome, data, vagas, etc.)[cite: 168]. |
+| **Participação** | Representa o vínculo e é o intermediário entre um usuário e um evento[cite: 168]. |
 
-## Visão lógica \<relembrem o material da Profa. Milene Serrano\> {#visão-lógica-relembrem-o-material-da-profa.-milene-serrano}
+#### Relação e Cardinalidade [cite: 169]
 
-*O sistema é subdividido nos seguintes módulos \<listar os módulos\>*
+| Entidade A | Relação | Entidade B | Cardinalidade |
+| :--- | :--- | :--- | :--- |
+| Usuário | Cria | Evento | 1:N (uma ONG cria/edita vários eventos) [cite: 170] |
+| Usuário | Participa | Evento | N:N (um voluntário participa de vários eventos, um evento tem vários voluntários) [cite: 170] |
+| Participação | Associa | Usuário e Evento | Resolve a relação N:N (intermediário) [cite: 170] |
 
-*\<incluir e explicar o diagrama de pacotes uml de cada módulo\>*
+#### Atributos das Tabelas [cite: 173]
 
-*\<explicar como eles se comunicam -- interfaces, protocolos\>*
+##### Tabela: `usuario` [cite: 174, 175]
 
-*\<incluir e explicar um diagrama de classes EM ALTO NÍVEL que
-represente como os dados são persistidos pela aplicação\>  
-Apresentar e explicar os pacotes que compõem o código da aplicação
-(incluir um diagrama de pacotes), subidividindo em:*
+| Atributos | Tipo de Dados | Chave | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_usuario` | INT | PK | Identificador único do usuário [cite: 176] |
+| `nome` | VARCHAR(50) | | Nome do usuário [cite: 176] |
+| `email` | VARCHAR(50) | | E-mail utilizado para login [cite: 176] |
+| `tipo_usuario` | VARCHAR(20) | | Define o tipo de usuário (voluntario ou ong) [cite: 176] |
+| `descricao_ong` | TEXT | | Descrição institucional da ONG (apenas para ONGs) [cite: 176] |
+| `necessidades_ong` | TEXT | | Necessidades atuais da ONG (apenas para ONGs) [cite: 176] |
+| `ong_id` | INT | FK $\rightarrow$ Usuário.id\_usuario | Identifica a ONG responsável pelo evento [cite: 178] |
 
-- *Camada e apresentação -- interface com usuários (sugere-se um
-  protótipo de baixa fidelidade);*
+##### Tabela: `evento` [cite: 174, 177]
 
-- *Lógica de negócios e regras de negócios -- identificar e explicar*
+| Atributos | Tipo de Dados | Chave | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_evento` | INT | PK | Identificador único do evento [cite: 178] |
+| `nome_evento` | VARCHAR(150) | | Nome do evento [cite: 178] |
+| `data_evento` | DATE | | Data de realização do evento [cite: 178] |
+| `vagas_total` | INT | | Número total de vagas disponíveis [cite: 178] |
+| `numero_participantes` | INT | | Quantidade atual de participantes inscritos [cite: 178] |
 
-- *Comunicação com o banco de dados -- identificar e explicar*
+##### Tabela: `participacao` [cite: 174, 179]
 
-## Visão de Dados (MER)
+| Atributos | Tipo de Dados | Chave | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_participacao` | INT | PK | Identificador único da participação [cite: 180] |
+| `usuario_id` | INT | FK $\rightarrow$ Usuário.id\_usuario | Identifica o voluntário participante [cite: 180] |
+| `evento_id` | INT | FK $\rightarrow$ Evento.id\_evento | Identifica o evento em que o voluntário se inscreveu [cite: 180] |
+| `data_participacao` | DATE | | Data da inscrição ou confirmação de presença [cite: 180] |
 
-*Apresentar e explicar o modelo Entidade Relacionamento*
+### 2.8 Visão de Implantação [cite: 20, 181]
 
-- *Principais tabelas*
+O software será implantado em uma **infraestrutura de nuvem** para garantir alta disponibilidade, segurança e escalabilidade[cite: 182].
 
-- *Relações entre as tabelas e suas respectivas cardinalidades*
+* **Servidor de Aplicação:** Será hospedado em um ambiente **Linux**, utilizando provedores como **Render, Railway ou AWS**, que suportam nativamente Django e PostgreSQL[cite: 183].
+* **Backend:** Desenvolvido com **Django** (Python) em conjunto com **Django Rest Framework (DRF)**, fornecendo uma API RESTful robusta e segura[cite: 185, 186].
+* **Frontend:** Desenvolvido em **Flutter** (Dart), um framework multiplataforma para criar interfaces responsivas e consistentes em dispositivos móveis (Android e iOS) e web (PWA)[cite: 188, 189].
+* **Banco de Dados:** Utilizará **PostgreSQL**, hospedado em uma instância separada na nuvem para maior segurança e isolamento[cite: 190, 191].
 
-- *Atributos das entidades*
+A arquitetura final é composta por três camadas principais:
 
-## Visão de Implantação \<relembrem o material da Profa. Milene Serrano\> {#visão-de-implantação-relembrem-o-material-da-profa.-milene-serrano}
+1.  **Frontend (Flutter)** – interface com o usuário.
+2.  **Backend (Django/DRF)** – lógica e API RESTful.
+3.  **Banco de Dados (PostgreSQL)** – armazenamento de informações.
 
-*\<O software será implantado \<descrever e justificar a infraestrurura
-de hardware para a implantação do software\>, segundo as tecnologias
-\<descrever e justificar\>, assim como o banco de dados (descrever e
-justificar)\>.*
+### 2.9 Restrições Adicionais 
 
-## Restrições adicionais
+#### 2.9.1 Restrições de Acesso 
 
-*\< descrever e justificar restrições adicionais ao software. Tais
-restrições podem estar relacionadas a aspectos negociais (ex.: É suposto
-que o software deve ser usado a partir da Intranet da empresa que, por
-sua vez exige a identificação e login do usuário; ou o software é
-acessível diretamente pela Internet, mas exige login do usuário; ou o
-software é preparado para atender xxx usuários logados
-concomitantemente), ou de qualidade de software tais como:*
+O software é acessado diretamente pelo aplicativo, mas requer **autenticação do usuário** para realizar ações como criar ou participar de eventos.
 
-*Citar, explicar e justificar as características de qualidade relevantes
-para o software (usabilidade, Confiabilidade, Portabilidade, etc, etc,
-etc)\>*
+#### 2.9.2 Usabilidade 
 
-# Bibliografia
+O sistema deve ser **intuitivo** para ambos os perfis: o usuário com pouco conhecimento tecnológico e o usuário que possui conhecimentos na área.
 
-*\<Use padrão ABNT em todos os documentos da disciplina\>.*
+#### 2.9.3 Segurança de Dados 
 
-[^1]: (\*) -- para cada integrante da equipe, considere sua participação
-    tanto no Documento de Arquitetura, quando nos demais documentos já
-    entregues pela equipe (Visaão do produto e do projeto; Declaração de
-    escopo) e atribua um, percentual. A soma dos percentuais de todos os
-    integrantes deve fechar em 100%)
+É essencial proteger os dados de ONGs e as informações pessoais dos usuários.
+
+* Todo envio de dados será realizado com **conexão segura**, utilizando técnicas de criptografia.
+* O acesso é feito mediante **senha pessoal**, evitando uso não autorizado.
+* Essas medidas seguem boas práticas de segurança recomendadas pela **OWASP** (Open Web Application Security Project) para aplicativos móveis.
+
+## 3. Bibliografia 
+
+* DATAFLAIR TEAM. **Django architecture: understanding MVT pattern with a real-time Example**. DataFlair, 2023.. Disponível em: https://data-flair.training/blogs/django-architecture/. Acesso em: 31 de outubro 2025.
+* OPEN WEB APPLICATION SECURITY PROJECT (OWASP). **Mobile application security verification standard (MASVS)**. 2023. Disponível em: https://owasp.org/www-project-mobile-security. Acesso em: 30 de outubro 2025.
+* SERRANO, Milene. **Arquitetura de software: visão geral**. \[Apresentação de slides\]. Material de aula não publicado. Brasília: Universidade de Brasília, 2025.
