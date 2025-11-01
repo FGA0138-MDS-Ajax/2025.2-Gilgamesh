@@ -1,28 +1,40 @@
-\[Nome do Produto\]
+\[Apoia+\]
 
 **Documento de Arquitetura**
 
-Versão \[n.n\]
+Versão \[1.1\]
 
 **Histórico de Revisão**
 
 |          |            |               |               |
 |----------|------------|---------------|---------------|
 | **Data** | **Versão** | **Descrição** | **Autor(es)** |
-|          |            |               |               |
-|          |            |               |               |
-|          |            |               |               |
-|          |            |               |               |
+|     30/10     |     1.0       |      Tópico 1.1          |        Ester       |
+|     30/10     |     1.0       |       Tópico 1.2         |        Artur       |
+|     30/10     |     1.0       |     Tópico 2.1, 2.1, 2.8           |      Edson         |
+|     30/10     |     1.0       |      Tópico 2.3          |       Lucas        |
+|     30/10     |     1.0       |      Tópico 2.4          |       Guilherme Carvalho        |
+|     31/10     |     1.0       |      Tópico 2.6          |    Edson e Lucas           |
+|     31/10     |     1.0       |     Tópico 2.7          |      Guilherme Carvalho         |
+|     31/10     |     1.0       |     Tópico 2.8           |     Artur e Ester          |
+|     31/10     |     1.0       |     Revisão ABNT           | Maria Luana              |
 
 Autores:
 
 |               |          |                                            |                                            |
 |---------------|----------|--------------------------------------------|--------------------------------------------|
-| **Matrícula** | **Nome** | **Desccrição do papel assumido na equipe** | **% de contribuição ao trabalho (\*)**[^1] |
-|               |          |                                            |                                            |
-|               |          |                                            |                                            |
-|               |          |                                            |                                            |
-|               |          |                                            |                                            |
+| **Matrícula** | **Nome** | **Desccrição do papel assumido na equipe** | % de contribuição ao trabalho (\*)|
+|      232024527         |     Artur     |                                            |                                            |
+|    232025730           |    Edson      |                                            |                                            |
+|      241012211          |    Ester       |                                            |                                            |
+|      241011822          |    Guilherme Carvalho       |                                            |                                            |
+|      231026456          |    Lucas       |                                            |                                            |
+|      231012002          |   Luis Fernando      |                                            |                                            |
+|      241011448          |    Maria Luana      |                                            |                                            |
+|      190129344          |    Paulo Vinícius       |                                            |                                            |
+|      241011878         |    Thauany       |                                            |                                            |
+|      241012392        |    Vinícius      |                                            |                                            |
+
 
 ***Lembre-se que o alinhamento de documentos entre entregas Aprender3 e
 GIthub é da responsabilide da equipe. Assim sendo, faz parte da
@@ -70,19 +82,31 @@ Serrano\>
 
 ## Propósito
 
-*Este documento descreve a arquitetura do sistema sendo desenvolvido
-pelo grupo, na disciplina de MDS -- Métodos de Desenvolvimento de
-Software -- edição do primeiro semestre de 2025, para o sistema \<nome
-do sistema\>, a fim de fornecer uma visão abrangente do sistema para
-desenvolvedores, testadores e demais interessados em aspectos
-relacionados às tecnologias a serem usadas no desenvolvimento.*
+*Este documento descreve a visão arquitetural abrangente do Apoia+, desenvolvido como parte de um projeto acadêmico da disciplina de Métodos de Desenvolvimento de Software (MDS), no segundo semestre de 2025. O propósito é registrar as decisões arquiteturais tomadas durante o planejamento e implementação do sistema, servindo como um guia para desenvolvedores e testadores. Ele descreve as escolhas tecnológicas, os padrões de design e a decomposição de componentes adotados para atender aos requisitos específicos de conexão entre voluntários e ONGs no DF, facilitando a organização e participação em eventos para um desenvolvimento coeso e um produto escalável.*
 
 ## Escopo
 
-*O detalhamento do escopo se encontra no documento \<Nome do documento:
-Voces entregaram a declaração de escopo do produto\> juntamente com o
-documento de Visão do produto e do projeto. Porém, em linhas gerais o
-escopo do produto compreende \<resumo do escopo\>.*
+O presente documento descreve a arquitetura do sistema “Apoia+”, uma aplicação móvel desenvolvida com o objetivo de conectar pessoas dispostas a doar para instituições sociais e ONGs cadastradas, promovendo o engajamento solidário e facilitando o acesso a campanhas de apoio em diferentes regiões. 
+
+O sistema busca centralizar informações sobre campanhas ativas, simplificar o processo de doação e fortalecer a visibilidade das organizações sociais, alinhando-se a objetivos de desenvolvimento sustentável, como redução das desigualdades e erradicação da pobreza. 
+
+O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessível, responsiva e intuitiva, compatível tanto com dispositivos móveis quanto navegadores web, e que permita: 
+
+  -O cadastro e autenticação de usuários (doadores e representantes de ONGs); 
+
+  -O cadastro e a gestão de ONGs e campanhas de arrecadação; 
+
+  -A busca e visualização de pontos de apoio e campanhas próximas; 
+
+  -O acompanhamento do status das doações; 
+
+  -A visualização de relatórios e indicadores sociais, facilitando a transparência e o engajamento; 
+
+  -A comunicação entre usuários e ONGs por meio de um sistema de mensagens ou contato direto. 
+
+  -A criação e divulgação de eventos por parte das ONGs cadastradas, com a possibilidade de usuários visualizarem e escolherem participar ou não; 
+
+Dessa forma, o Apoia+ visa criar um ambiente digital de impacto social positivo, promovendo a solidariedade e tornando o processo de doação mais simples, transparente e acessível a todos. 
 
 # Representação Arquitetural
 
