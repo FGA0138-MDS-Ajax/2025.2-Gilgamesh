@@ -10,5 +10,22 @@ nav:
     - Ata 4: "atas-reuniao/ata-reuniao-4.md"
     - Ata 5: "atas-reuniao/ata-reuniao-5.md"
 
-theme:                         
-  name: material               
+theme:
+  name: material
+  palette:
+    # 1. ESQUEMA DE CORES GERAL (Fundo da página e da barra de navegação)
+    # Selecione um: default (claro), slate (escuro/cinza), ou outro.
+    scheme: slate # 'default' para claro, 'slate' para escuro
+
+    # 2. COR PRIMÁRIA (Cor principal de destaque: cabeçalho, botões, links)
+    # Escolha uma cor: red, pink, indigo, blue, green, amber, etc.
+    primary: indigo
+
+    # 3. COR DE ACENTO (Usada para destaques menores, como caixas de seleção)
+    # Escolha uma cor: red, pink, indigo, blue, green, amber, etc.
+    accent: amber
+
+  # 4. CONFIGURAÇÕES VISUAIS DA FONTE
+  font:
+    text: Roboto # Fonte do corpo do texto
+    code: Roboto Mono # Fonte usada para código           
