@@ -10,12 +10,12 @@
 **Local:** On-line (Discord) <br> 
 
 ## Participantes
-Edson <br>
-Ester <br>
-Guilherme C. <br>
-Lucas <br>
-Paulo <br>
-Vinicius <br>
+1.Edson <br>
+2.Ester <br>
+3.Guilherme C. <br>
+4.Lucas <br>
+5.Paulo <br>
+6.Vinicius <br>
 
 ## Discussões e Decisões
 
