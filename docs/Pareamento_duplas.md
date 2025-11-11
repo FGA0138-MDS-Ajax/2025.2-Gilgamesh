@@ -51,4 +51,26 @@
 
 [Planilha online Excel](https://unbbr-my.sharepoint.com/:x:/g/personal/232025730_aluno_unb_br/EYUA1su3M39GhFeWBapI7OIBFd_hL7Or4KULtY7UKUwifA?rtime=FhPkJaoU3kg)
 
+#                                                            Sprint 3
+
+| Nome \ Integrante | Artur | Edson | Ester | Guilherme C. | Guilerme O. | Lucas | Luis | Maria Luana | Paulo | Thauany | Vinícius |
+|-------------------|--------|--------|--------|---------------|--------------|--------|--------|---------------|--------|----------|-----------|
+| **Artur**         |        |       |        |               |              |        |   CRUD EVENTOS      |       CRUD EVENTOS        |        |          |           |
+| **Edson**         |        |        |        |       BD        |              |        |        |               |        |          |           |
+| **Ester**         |        |        |        |               |              |        |        |               |        |          |     FLUTTER      |
+| **Guilherme C.**  |        |   BD     |        |               |              |        |        |               |        |          |           |
+| **Guilerme O.**   |        |        |        |               |              |        |        |               |    TESTES/PAGINA INFORMATIVA    |          |           |
+| **Lucas**         |        |        |        |               |              |       |        |               |        |      CRUD EVENTOS     |           |
+| **Luis**          |    CRUD EVENTOS    |        |        |               |              |        |        |      CRUD EVENTOS        |        |          |           |
+| **Maria Luana**   |    CRUD EVENTOS     |        |        |               |              |        |     CRUD EVENTOS    |               |        |          |           |
+| **Paulo**         |        |        |        |               |      TESTES/PAGINA INFORMATIVA        |        |        |               |        |          |           |
+| **Thauany**       |        |        |        |               |              |    CRUD EVENTOS     |        |               |        |          |           |
+| **Vinícius**      |        |        |    FLUTTER    |               |              |        |        |               |        |          |           |
+
+
+
+[Planilha online Excel](https://unbbr-my.sharepoint.com/:x:/g/personal/232025730_aluno_unb_br/EYUA1su3M39GhFeWBapI7OIBFd_hL7Or4KULtY7UKUwifA?rtime=FhPkJaoU3kg)
+
+
+
 
