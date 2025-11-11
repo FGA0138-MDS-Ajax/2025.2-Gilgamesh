@@ -31,3 +31,24 @@
 | Sprint 5 | -------------------- |
 | Sprint 6 | -------------------- |
 
+#                                                            Sprint 2
+
+| Nome \ Integrante | Artur | Edson | Ester | Guilherme C. | Guilerme O. | Lucas | Luis | Maria Luana | Paulo | Thauany | Vinícius |
+|-------------------|--------|--------|--------|---------------|--------------|--------|--------|---------------|--------|----------|-----------|
+| **Artur**         |        |   BD    |        |               |              |        |        |               |        |          |           |
+| **Edson**         |    BD    |        |        |               |              |        |        |               |        |          |           |
+| **Ester**         |        |        |        |       BD        |              |        |        |               |        |          |           |
+| **Guilherme C.**  |        |        |    BD   |               |              |        |        |               |        |          |           |
+| **Guilerme O.**   |        |        |        |               |              |    LOGIN   |        |               |        |          |           |
+| **Lucas**         |        |        |        |               |      LOGIN        |       |        |               |        |          |           |
+| **Luis**          |        |        |        |               |              |        |        |       LOGIN       |        |          |           |
+| **Maria Luana**   |        |        |        |               |              |        |     LOGIN   |               |        |          |           |
+| **Paulo**         |        |        |        |               |              |        |        |               |        |     PROTÓTIPO FIGMA     |      PROTÓTIPO FIGMA     |
+| **Thauany**       |        |        |        |               |              |        |        |               |   PROTÓTIPO FIGMA     |          |  PROTÓTIPO FIGMA         |
+| **Vinícius**      |        |        |        |               |              |        |        |               |     PROTÓTIPO FIGMA    |     PROTÓTIPO FIGMA     |           |
+
+
+
+[Planilha online Excel](https://unbbr-my.sharepoint.com/:x:/g/personal/232025730_aluno_unb_br/EYUA1su3M39GhFeWBapI7OIBFd_hL7Or4KULtY7UKUwifA?rtime=FhPkJaoU3kg)
+
+
