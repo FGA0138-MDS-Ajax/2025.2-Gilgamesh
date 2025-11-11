@@ -3,6 +3,7 @@ site_name: Documentação
 nav:
   - Instruções mkdocs: "index.md"
   - Documento de arquitetura: "Documento_Arquitetura.md"
+  - Pareamento de duplas: "Pareamento_duplas.md"
   - Atas de Reunião:             
     - Ata 1: "atas-reuniao/ata-reuniao-1.md" 
     - Ata 2: "atas-reuniao/ata-reuniao-2.md" 
