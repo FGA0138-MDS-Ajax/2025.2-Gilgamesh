@@ -21,6 +21,10 @@ nav:
     - Ata 9: "atas-reuniao/ata-reuniao-9-11.md"
     
     
+markdown_extensions:
+  - toc:
+      toc_depth: 3
+
 
 theme:
   name: material
