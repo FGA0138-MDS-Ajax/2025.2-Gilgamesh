@@ -1,17 +1,13 @@
-# Welcome to MkDocs
+# Documentação do projeto Apoia+ - Gilgamesh
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+> Este repositório contém a documentação produzida pelo Grupo Gilgamesh como parte das atividades da disciplina Métodos de Desenvolvimento de Software, ofertada no curso de Engenharia de Software da Universidade de Brasília (UnB) e ministrada pelo Professor Hilmer.
 
-## Commands
+## Objetivo do projeto
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+O projeto consiste no desenvolvimento de uma aplicação móvel voltada a conectar pessoas interessadas em doar a instituições sociais e ONGs cadastradas, promovendo o engajamento solidário e facilitando o acesso a campanhas de apoio em diversas regiões.
 
-## Project layout
+A plataforma tem como propósito centralizar informações sobre campanhas ativas, simplificar o processo de doação e ampliar a visibilidade das organizações sociais, contribuindo para os Objetivos de Desenvolvimento Sustentável (ODS), especialmente aqueles relacionados à redução das desigualdades e à erradicação da pobreza.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Participantes
+
+
