@@ -31,7 +31,7 @@
 | Sprint 5 | -------------------- |
 | Sprint 6 | -------------------- |
 
-##                                                            Sprint 2
+##                                                            🗓️ Sprint 2
 
 | Nome \ Integrante | Artur | Edson | Ester | Guilherme C. | Guilerme O. | Lucas | Luis | Maria Luana | Paulo | Thauany | Vinícius |
 |-------------------|--------|--------|--------|---------------|--------------|--------|--------|---------------|--------|----------|-----------|
@@ -51,7 +51,7 @@
 
 [Planilha online Excel](https://unbbr-my.sharepoint.com/:x:/g/personal/232025730_aluno_unb_br/EYUA1su3M39GhFeWBapI7OIBFd_hL7Or4KULtY7UKUwifA?rtime=FhPkJaoU3kg)
 
-##                                                            Sprint 3
+##                                                           🗓️ Sprint 3
 
 | Nome \ Integrante | Artur | Edson | Ester | Guilherme C. | Guilerme O. | Lucas | Luis | Maria Luana | Paulo | Thauany | Vinícius |
 |-------------------|--------|--------|--------|---------------|--------------|--------|--------|---------------|--------|----------|-----------|
