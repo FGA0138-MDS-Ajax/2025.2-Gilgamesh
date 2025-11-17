@@ -21,7 +21,7 @@
 
 Nesta reunião, o subgrupo responsável pelo Épico de CRUD de Eventos concluiu que todas as atribuições foram finalizadas com sucesso, com exceção dos testes para os quais surgiram dúvidas sobre o procedimento de continuidade. <br> 
 
-Foi adicionada uma classe de permissões que permite somente às ONGs editar suas próprias informações, enquanto os usuários externos mantêm o acesso de visualização. Para implementar essa regra, foi necessário adicionar o arquivo permissions.py ao módulo de autenticação. <br>
+Implementamos uma classe de permissões que restringe a criação e edição de eventos apenas às ONGs, mantendo o acesso de visualização para os usuários externos. Para isso, o arquivo permissions.py foi adicionado ao módulo de autenticação. <br>
 
 Surgiram dúvidas operacionais a respeito da ferramenta Zenhub, especificamente sobre quando e como finalizar uma sprint e o procedimento a ser adotado para a conclusão e aprovação dos testes.<br>
 **Decisões:**
