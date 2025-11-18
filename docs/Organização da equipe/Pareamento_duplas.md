@@ -27,7 +27,7 @@
 |:--------|:--------|
 | Sprint 2 | (1,2), (3,4), (5,6), (7,8), (9,10,11) |
 | Sprint 3 | (1,7,8), (2,4), (3,11), (5,9), (6,10) |
-| Sprint 4 | (1,6), (2,11), (3,9), (4,10), (5,8)   |
+| Sprint 4 | (1,3), (2,11), (4,8,10), (9,5), (6,7)   |
 | Sprint 5 | -------------------- |
 | Sprint 6 | -------------------- |
 
@@ -70,6 +70,27 @@
 
 
 [Planilha online Excel](https://unbbr-my.sharepoint.com/:x:/g/personal/232025730_aluno_unb_br/EYUA1su3M39GhFeWBapI7OIBFd_hL7Or4KULtY7UKUwifA?rtime=FhPkJaoU3kg)
+
+##                                                           🗓️ Sprint 4
+
+| Nome \ Integrante | Artur | Edson | Ester | Guilherme C. | Guilerme O. | Lucas | Luis | Maria Luana | Paulo | Thauany | Vinícius |
+|-------------------|--------|--------|--------|---------------|--------------|--------|--------|---------------|--------|----------|-----------|
+| **Artur**         |        |       |   CRUD PARTICIPACAO     |               |              |        |         |               |        |          |           |
+| **Edson**         |        |        |        |              |              |        |        |               |        |          |    FLUTTER       | 
+| **Ester**         |   CRUD PARTICIPACAO     |        |        |               |              |        |        |               |        |          |           |
+| **Guilherme C.**  |        |        |        |               |              |        |       |    FLUTTER           |        |   FLUTTER       |           |
+| **Guilerme O.**   |        |        |        |               |              |        |        |               |   CRUD PARTICIPACAO     |          |           |
+| **Lucas**         |        |        |        |               |              |       |   BD     |               |        |           |           |
+| **Luis**          |        |        |        |        FLUTTER       |              |   BD     |       |              |       |          |           |
+| **Maria Luana**   |        |        |        |        FLUTTER       |             |        |         |               |        |   FLUTTER       |           |
+| **Paulo**         |        |        |        |               |     CRUD PARTICIPACAO         |        |        |               |        |          |           |
+| **Thauany**       |        |        |        |               |              |         |        |       FLUTTER        |        |          |           |
+| **Vinícius**      |        |  FLUTTER      |        |               |              |        |        |               |        |          |           |
+
+
+
+[Planilha online Excel](https://unbbr-my.sharepoint.com/:x:/g/personal/232025730_aluno_unb_br/EYUA1su3M39GhFeWBapI7OIBFd_hL7Or4KULtY7UKUwifA?rtime=FhPkJaoU3kg)
+
 
 
 
