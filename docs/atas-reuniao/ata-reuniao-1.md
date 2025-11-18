@@ -31,7 +31,7 @@ Foram levantadas questões acerca de histórias de usuário, requisitos do proje
 **Decisões:**
 
 - Requisitos funcionais e não funcionais. <br> 
-- Divissão inicial do grupo. <br> 
+- Divisão inicial do grupo. <br> 
 - Mínimo produto viável. <br>
 - Levantamento de possíveis tecnologias. <br>
 - Criação de planilha para disponibilidade em futuras reuniões. <br>
