@@ -2,7 +2,7 @@
   <img src="imagens/logo.png" alt="Logo Apoia+" width="300">
 </p>
 
-<h1 align="center">📱 Apoia+ — Plataforma de Apoio e Doações</h1>
+<h1 align="center">📱 Apoia+ — Plataforma de Apoio</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow">
