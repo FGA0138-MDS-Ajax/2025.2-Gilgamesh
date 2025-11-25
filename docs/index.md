@@ -59,7 +59,9 @@ A plataforma tem como propósito:
 - **Flutter** — desenvolvimento mobile  
 - **Dart** — linguagem principal  
 - **Git/GitHub** — versionamento  
-- **Figma** — prototipação e design  
+- **Figma** — prototipação e design
+- **Zenhub**  — organização e planejamento
+- **Discord** — comunicação 
 
 
 ---
