@@ -86,7 +86,7 @@ A plataforma tem como propósito:
 git clone [https://github.com/fga-eps-mds/2025.2-Gilgamesh.git]
 
 # Acessar o diretório
-cd 2025.2-Gilgamesh
+cd 2025.2-Gilgamesh/mobile_apoia
 
 # Instalar dependências
 pip install -r requirements.txt
