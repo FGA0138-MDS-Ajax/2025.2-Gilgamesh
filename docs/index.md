@@ -1,5 +1,7 @@
 # Documentação do projeto Apoia+ 
 
+[Logo Apoia+](docs/imagens/logo.png)
+
 > Este repositório contém a documentação produzida pelo Grupo Gilgamesh como parte das atividades da disciplina Métodos de Desenvolvimento de Software, ofertada no curso de Engenharia de Software da Universidade de Brasília (UnB) e ministrada pelo Professor Hilmer.
 
 ## Objetivo do projeto
