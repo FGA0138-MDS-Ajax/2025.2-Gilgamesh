@@ -55,13 +55,15 @@ A plataforma tem como propósito:
 
 ## 🛠 Tecnologias Utilizadas
 
-- **Django** — desenvolvimento backedn e lógica de negócio  
+- **Django** — desenvolvimento backend e lógica de negócio  
 - **Flutter** — desenvolvimento mobile  
 - **Dart** — linguagem principal  
 - **Git/GitHub** — versionamento  
 - **Figma** — prototipação e design
 - **Zenhub**  — organização e planejamento
-- **Discord** — comunicação 
+- **Discord** — comunicação
+- **Microsoft Teams** - comunicação
+- **WhatsApp** - comunicação 
 
 
 ---
@@ -83,7 +85,7 @@ A plataforma tem como propósito:
 
 ```bash
 # Clonar o repositório
-git clone [https://github.com/fga-eps-mds/2025.2-Gilgamesh.git]
+git clone https://github.com/fga-eps-mds/2025.2-Gilgamesh.git
 
 # Acessar o diretório
 cd 2025.2-Gilgamesh/apoia/mobile_apoia
