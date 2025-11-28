@@ -21,6 +21,7 @@
 | 31/10 | 1.0 | Tópico 2.7 | Guilherme Carvalho  |
 | 31/10 | 1.0 | Tópico 2.8 | Artur e Ester  |
 | 31/10 | 1.0 | Revisão ABNT | Maria Luana  |
+| 28/11 | 1.1 | Tópicos 1.2, 2.6, 2.7| Guilherme Carvalho  |
 
 ## Autores 
 
@@ -30,7 +31,7 @@
 | 232025730 | Edson | |  |
 | 241012211 | Ester | |  |
 | 241011822 | Guilherme C | |  |
-| | Guilherme | |  |
+| 222006777 | Guilherme | |  |
 | 231026456 | Lucas | |  |
 | 231012002 | Luis Fernando | |  |
 | 241011448 | Maria Luana | |  |
@@ -57,7 +58,6 @@ O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessíve
 * A busca e visualização de pontos de apoio e campanhas próximas;
 * O acompanhamento do status das doações;
 * A visualização de relatórios e indicadores sociais, facilitando a transparência e o engajamento;
-* A comunicação entre usuários e ONGs por meio de um sistema de mensagens ou contato direto;
 * A criação e divulgação de eventos por parte das ONGs cadastradas, com a possibilidade de usuários visualizarem e escolherem participar ou não.
 
 Dessa forma, o Apoia+ visa criar um ambiente digital de impacto social positivo, promovendo a solidariedade e tornando o processo de doação mais simples, transparente e acessível a todos.
@@ -133,9 +133,9 @@ O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas*
 
 | **Módulo (App)**                  | **Razão Lógica**                                                   | **Componentes Principais**                                                  |
 | :-------------------------------- | :----------------------------------------------------------------- | :-------------------------------------------------------------------------- |
-| **Autenticação** (`autenticacao`) | Gerenciar cadastro, login e segurança                              | **Model:** Usuário.<br>**View:** RegisterView, LoginView.                   |
-| **ONGs** (`ongs`)                 | Permite o CRUD de perfis de ONGs e a visualização pública          | **Model:** Usuário (tipo_usuario: ong).<br>**View:** ONGView.               |
-| **Gestão de Eventos** (`eventos`) | Permite a criação de eventos pela ONG e a inscrição de voluntários | **Model:** Evento, Participação.<br>**View:** EventoView, ParticipacaoView. |
+| **Autenticação** (`autenticacao`) | Gerenciar cadastro, login e segurança                              | **Model:** Usuário.<br>**View:** CadastroView, LoginView, LogoutView.       |
+| **Eventos** (`eventos`)           |  Permite o CRUD de eventos                                         | **Model:** Eventos (tipo_usuario: ong).<br>**View:** ONGView.               |
+| **Participação** (`participacoes`)| Permite gerenciar a inscrição de voluntários nos eventos           | **Model:**Participação.<br>**View:** EventoView, ParticipacaoView.          |
 | **Administração**                 | Gerencia usuários e configurações do sistema                       | Utiliza o módulo `django.contrib.admin`.                                    |
 
 
@@ -260,10 +260,8 @@ A partir da definição do papel assumido pelas entidades descritas, associamos 
 | `email` | VARCHAR(50) | | E-mail utilizado para login  |
 | `senha` | VARCHAR(50) | | Senha cripstografada do usuário  |
 | `localizacao` | VARCHAR(50) | | Localização (fixa para ONG, dinâmica para voluntário)  |
-| `contato` | VARCHAR(50) | | Telefone ou outro meio de contato |
 | `tipo_usuario` | VARCHAR(20) | | Define o tipo de usuário (voluntario ou ong)  |
 | `descricao_ong` | TEXT | | Descrição institucional da ONG (apenas para ONGs)  |
-| `necessidades_ong` | TEXT | | Necessidades atuais da ONG (apenas para ONGs)  |
 
 ##### Tabela 5: Atributos de evento 
 
@@ -272,10 +270,9 @@ A partir da definição do papel assumido pelas entidades descritas, associamos 
 | `id_evento` | INT | PK | Identificador único do evento  |
 | `nome_evento` | VARCHAR(150) | | Nome do evento |
 | `descricao_evento` | VARCHAR(150) | | Descrição detalhada do evento |
-| `data_evento` | DATE | | Data de realização do evento  |
+| `data_inicio` | DATE | | Data de realização do evento  |
+| `data_fim` | DATE | | Data de finalização do evento  |
 | `localizacao_evento` | VARCHAR(150) | | Local onde o evento ocorrerá |
-| `vagas_total` | INT | | Número total de vagas disponíveis  |
-| `numero_participantes` | INT | | Quantidade atual de participantes inscritos  |
 | `ong_id ` | VARCHAR(150) |FK → Usuário.id_usuario  | Identifica a ONG responsável pelo evento  |
 
 ##### Tabela 6 : Atributos de participacao 
