@@ -92,3 +92,8 @@ história e explicá-la para os desenvolvedores. [P.37]*
 * **Critérios de Aceite:**
    * [ ] Permitir alteração de senha (exigindo a senha antiga).
     * [ ] Permitir alteração de telefone e foto de perfil.
+
+## Fonte:
+Marco Tulio Valente. Engenharia de Software Moderna: Princípios e Práticas para Desenvolvimento de Software com Produtividade, Editora: Independente, 2020. Disponível em: <https://https://engsoftmoderna.info/>. Acesso em: 4 dez. 2025.
+
+          
