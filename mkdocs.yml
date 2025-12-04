@@ -4,7 +4,7 @@ nav:
   - Home: "index.md"
 
   - Visão de produto: "Visao de produto/url-figma.md"
-  
+  - Backlog do Produto: "Backlog do Produto.md"
   - Documento de arquitetura: "Arquitetura/Documento_Arquitetura.md"
   
   - Pareamento de duplas: "Organização da equipe/Pareamento_duplas.md"
