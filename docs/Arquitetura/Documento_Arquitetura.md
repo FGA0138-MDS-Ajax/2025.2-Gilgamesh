@@ -93,9 +93,9 @@ Por último, a camada de **Template** é responsável pela apresentação das in
 
 ***
 
-![Diagrama de Arquitetura, Elaborado por: Lucas Itacamby](imagens/Representacao_Arquitetura.png)
+![Diagrama de Arquitetura, Elaborado por: Lucas Itacamby](/docs/imagens/Representacao_Arquitetura.png)
 
-**Fonte:** elaborado por Lucas Chaves Itacaramby (2025)
+**Fonte:** elaborado por Lucas Itacaramby (2025)
 
 ***
 
@@ -156,7 +156,7 @@ O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas*
 O diagrama de classes apresentado a seguir ilustra a estrutura básica do sistema Apoia+, mostrando os principais componentes e como eles se relacionam entre si. Essa representação permite visualizar os elementos fundamentais que compõem a aplicação, incluindo as entidades principais, suas características e as conexões existentes. 
 ***
 
-![Diagrama de classes, Elaborado por: Edson Pereira](imagens/UML_Classes.png)
+![Diagrama de classes, Elaborado por: Edson Pereira](/docs/imagens/UML_Classes.png)
 
 **Fonte:** elaborado por Edson Pereira (2025)
 
@@ -218,9 +218,9 @@ Os pacotes que compõem essa camada são:
  
 ***
 
-![Diagrama de pacotes, Elaborado por: Lucas Itacamby](imagens/Diagrama_Pacotes.png)
+![Diagrama de pacotes, Elaborado por: Lucas Itacamby](/docs/imagens/Diagrama_Pacotes.png)
 
-**Fonte:** elaborado por Lucas Itacamby (2025)
+**Fonte:** elaborado por Lucas Itacaramby (2025)
 
 ***
 ### 2.7 Visão de Dados (MER) 
