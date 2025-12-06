@@ -22,7 +22,7 @@
 | 31/10 | 1.0 | Tópico 2.8 | Artur e Ester  |
 | 31/10 | 1.0 | Revisão ABNT | Maria Luana  |
 | 28/11 | 1.1 | Tópicos 1.2, 2.6, 2.7 | Guilherme Carvalho  |
-| 06/12 | 1.2 | Tópicos 2.3 | Lucas  |
+| 06/12 | 1.2 | Tópicos 2.3, 2.6 | Lucas  |
 
 ## Autores 
 
@@ -201,9 +201,10 @@ O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas*
 O diagrama de classes apresentado a seguir ilustra a estrutura básica do sistema **Apoia+**, mostrando os principais componentes e como eles se relacionam entre si. Essa representação permite visualizar os elementos fundamentais que compõem a aplicação, incluindo as entidades principais, suas características e as conexões existentes.
 ***
 
-![Diagrama de classes, Elaborado por: Edson Pereira](/docs/imagens/UML_Classes.png)
+![Diagrama de classes](../imagens/Diagrama_Classes.png)
 
-**Fonte:** elaborado por Edson Pereira (2025)
+<p align="center"><em>Figura 2 - Diagrama de classes</em></p>
+<p align="center"><em>Fonte: <a href="https://github.com/edso-n">Edson Pereira</a></em></p>
 
 ***
 
