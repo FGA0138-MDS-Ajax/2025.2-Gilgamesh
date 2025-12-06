@@ -21,7 +21,8 @@
 | 31/10 | 1.0 | Tópico 2.7 | Guilherme Carvalho  |
 | 31/10 | 1.0 | Tópico 2.8 | Artur e Ester  |
 | 31/10 | 1.0 | Revisão ABNT | Maria Luana  |
-| 28/11 | 1.1 | Tópicos 1.2, 2.6, 2.7| Guilherme Carvalho  |
+| 28/11 | 1.1 | Tópicos 1.2, 2.6, 2.7 | Guilherme Carvalho  |
+| 06/12 | 1.2 | Tópicos 2.3 | Lucas  |
 
 ## Autores 
 
@@ -43,7 +44,7 @@
 
 ### 1.1 Propósito 
 
-Este documento descreve a visão arquitetural abrangente do Apoia+, desenvolvido como parte de um projeto acadêmico da disciplina de Métodos de Desenvolvimento de Software (MDS), no segundo semestre de 2025. O propósito é registrar as decisões arquiteturais tomadas durante o planejamento e implementação do sistema, servindo como um guia para desenvolvedores e testadores.
+Este documento descreve a visão arquitetural abrangente do **Apoia+**, desenvolvido como parte de um projeto acadêmico da disciplina de Métodos de Desenvolvimento de Software (MDS), no segundo semestre de 2025. O propósito é registrar as decisões arquiteturais tomadas durante o planejamento e implementação do sistema, servindo como um guia para desenvolvedores e testadores.
 
 Ele descreve as escolhas tecnológicas, os padrões de design e a decomposição de componentes adotados para atender aos requisitos específicos de conexão entre voluntários e ONGs no DF, facilitando a organização e participação em eventos para um desenvolvimento coeso e um produto escalável.
 
@@ -60,19 +61,19 @@ O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessíve
 * A visualização de relatórios e indicadores sociais, facilitando a transparência e o engajamento;
 * A criação e divulgação de eventos por parte das ONGs cadastradas, com a possibilidade de usuários visualizarem e escolherem participar ou não.
 
-Dessa forma, o Apoia+ visa criar um ambiente digital de impacto social positivo, promovendo a solidariedade e tornando o processo de doação mais simples, transparente e acessível a todos.
+Dessa forma, o **Apoia+** visa criar um ambiente digital de impacto social positivo, promovendo a solidariedade e tornando o processo de doação mais simples, transparente e acessível a todos.
 
 ## 2. Representação Arquitetural 
 
 ### 2.1 Definições
 
-O sistema seguirá uma arquitetura em camadas, com o modelo arquitetural escolhido **MVT (Model-View-Template)** com o Framework **Django**.
+O sistema seguirá uma arquitetura em camadas, com o modelo arquitetural escolhido **MVC (Model–View–Controller)** com o Framework **Django**.
 
 ### 2.2 Justificativa 
 
-A escolha da arquitetura em MVT é uma consequência direta da adoção dos frameworks **Django** e **Flutter**, que foram selecionados com base nas necessidades do projeto e no plano de capacitação da equipe.  
+A escolha da arquitetura em MVC é uma consequência direta da adoção dos frameworks **Django** e **Flutter**, que foram selecionados com base nas necessidades do projeto e no plano de capacitação da equipe.  
 
-Derivada da arquitetura MVC, que possui como princípios a organização e a reutilização de código, a abordagem MVT do Django é adequada aos requisitos de nosso produto. Será principalmente por meio do Django que a lógica de negócios (Controller) e a estrutura de dados (Model) serão implementadas, o que é ideal para construir a API RESTful que o sistema necessita. 
+A arquitetura MVC possui como princípios a organização e a reutilização de código, a abordagem MVC do Django é adequada aos requisitos de nosso produto. Será principalmente por meio do Django que a lógica de negócios (Controller) e a estrutura de dados (Model) serão implementadas, o que é ideal para construir a API RESTful que o sistema necessita.
 
 Concluímos que esta arquitetura de backend se integra bem ao cliente desenvolvido em Flutter, que consumirá os endpoints (rotas da API) gerados pelo Django. 
 
@@ -80,22 +81,66 @@ Dessa forma, acreditamos que essa escolha será vantajosa não apenas em termos 
 
 ### 2.3 Detalhamento 
 
-O padrão arquitetural adotado para o desenvolvimento do sistema Apoia+ é o **MVT (Model-View-Template)**, implementado com o framework Django. Esse modelo segue o princípio da arquitetura em camadas, promovendo a separação de responsabilidades, a modularização do código e a facilidade na manutenção e evolução do sistema. 
+#### 2.3.1 Arquitetura Geral do Sistema Apoia+
 
-Assim como o padrão MVC, o MVT organiza a aplicação em três componentes principais: Model, View e Template, adaptando o papel do Controller para o próprio framework, simplificando a estrutura de comunicação entre as camadas. 
+A arquitetura do sistema **Apoia+** segue o padrão **MVC (Model–View–Controller)**, distribuído entre duas camadas principais:
 
-O **Model** representa a camada de acesso e manipulação dos dados, concentrando a lógica de negócios e as regras de persistência da aplicação. No Apoia+, essa camada é responsável por gerenciar as informações armazenadas no banco de dados, como registros de usuários e ONGs, registros do status de doações e relatórios de eventos. 
+* Backend, desenvolvido em **Django**, responsável por toda lógica de negócios, regras de autenticação, processamento de dados e comunicação com o banco de dados.
 
-A **View** é a camada que processa as requisições e retorna as respostas apropriadas ao usuário. Ela funciona como intermediária entre o Model e o Template, sendo responsável por aplicar as regras de negócio, processar formulários, realizar consultas no banco de dados e definir qual Template dever ser renderizado. Nesse caso, a View atua como o Controller do padrão MVC, gerenciando o fluxo de navegação do sistema, controlando ações como autenticação de usuários, criação de eventos e visualização de relatórios. 
+* Frontend, desenvolvido em **Flutter**, responsável pela interação direta com o usuário.
 
-Por último, a camada de **Template** é responsável pela apresentação das informações ao usuário final. Ela define a estrutura visual das páginas HTML, integrando dados enviados pela View e elementos de design definidos pela equipe para a interface. 
+O diagrama representa o fluxo completo entre essas camadas, descrevendo como os componentes do sistema se organizam e interagem.
 
+#### 2.3.2 View (Flutter) – Interface e Interação com o Usuário
+
+No topo da arquitetura está a **View**, representada pela aplicação **Flutter**. É neste nível que ocorre toda a interação do usuário com a interface, incluindo:
+
+* Telas de login e cadastro
+* Listagem de usuários
+* Relatórios
+* Tela de criação de eventos
+* Visualização de dados gerais do sistema
+
+A **View** tem como função consumir os endpoints fornecidos pelo **Django** e renderizar no aplicativo as informações retornadas pela API.
+
+#### 2.3.3 Controller (Django Views) – Lógica de Negócio e Rotas da API
+
+O **Controller**, implementado no **Django** através de suas **Views** (RegisterView, LoginView, UserListView, CreateEventsView, entre outras), recebe as requisições feitas pelo **Flutter** e atua como intermediário entre o frontend e o backend. Suas principais responsabilidades incluem:
+
+* Interpretar e validar requisições do cliente
+* Coordenar operações de leitura e escrita no banco de dados
+* Aplicar regras de negócio
+* Formatar e retornar respostas apropriadas para o **Flutter**
+
+Ou seja, toda a lógica que determina como as operações devem ocorrer fica concentrada no **Controller**, que decide o que solicitar ao **Model** e o que retornar à **View**.
+
+#### 2.3.4 Model (Django Models) – Representação e Manipulação dos Dados
+
+O **Model** corresponde à camada de dados do **Django**, responsável por representar e manipular as entidades centrais do sistema. Entre os modelos utilizados estão:
+
+* User (classe abstrata) — base para os diferentes tipos de usuários
+* Usuário Padrão — usuários comuns do sistema
+* ONGs — entidades cadastradas
+* Eventos — atividades criadas pelas ONGs
+
+Essa camada possui a função de fornecer dados processados ao **Controller**, além de executar operações como consultas, inserções, atualizações ou remoções no banco de dados.
+
+#### 2.3.5 Banco de Dados – Armazenamento com PostgreSQL
+
+O sistema **Apoia+** utiliza o **PostgreSQL** como banco de dados relacional para armazenamento de informações da aplicação. O **PostgreSQL** foi escolhido por sua robustez, conformidade com o padrão SQL, escalabilidade e suporte nativo a transações complexas, tornando-o ideal para aplicações que exigem integridade e consistência. No banco de dados estão armazenados:
+
+* Informações de usuários, incluindo dados de autenticação e perfis
+* Registros de ONGs e seus dados administrativos
+* Eventos criados pelas ONGs
+
+Após o processamento, o banco retorna os dados necessários, permitindo que os **Models** os repassem ao **Controller** de maneira segura e estruturada.
 
 ***
 
-![Diagrama de Arquitetura, Elaborado por: Lucas Itacamby](/docs/imagens/Representacao_Arquitetura.png)
+![Diagrama de Arquitetura](../imagens/Representacao_Arquitetura.png)
 
-**Fonte:** elaborado por Lucas Itacaramby (2025)
+<p align="center"><em>Figura 1 - Representação da Arquitetura</em></p>
+<p align="center"><em>Fonte: <a href="https://github.com/LucasItacaramby">Lucas Itacaramby</a></em></p>
 
 ***
 
@@ -123,11 +168,11 @@ Assim, o produto de software tem como funcionalidades:
 * Geração de uma lista com participantes com presença confirmada no evento;
 * Mapa interativo para melhor experiência dos usuários.
 
-Essas funcionalidades surgem para permitir uma maior integração entres voluntários e ONGs, assim centralizando distribuição de informações em apenas um canal de comunicação. A partir disso, a escolha arquitetural do produto surge em razão da experiencia prévia da equipe, assim escolhendo modelo **MVC (Model–View–Controller)**, entretanto essa escolha juntamente com a decisão de adotar o *framework* Django, estabeleceu o padrão final sendo o **MTV (Model–Template–View)**, que é uma variação do tradicional MVC para o framework escolhido.
+Essas funcionalidades surgem para permitir uma maior integração entres voluntários e ONGs, assim centralizando distribuição de informações em apenas um canal de comunicação. A partir disso, a escolha arquitetural do produto surge em razão da experiencia prévia da equipe, assim escolhendo modelo **MVC (Model–View–Controller)**, portanto essa escolha juntamente com a decisão de adotar o *framework* **Django**, estabeleceu o padrão final sendo o **MVC (Model–View–Controller)** para o framework escolhido.
 
 ### 2.6 Visão Lógica 
 
-O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas**. A camada de Servidor (**Backend**) segue o padrão **MVT** (Model-View-Template) com Django , e a camada de Cliente (**Frontend**) é um aplicativo móvel (**Flutter**) que consome os dados do servidor.
+O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas**. A camada de Servidor (**Backend**) segue o padrão **MVC** (Model–View–Controller) com **Django** , e a camada de Cliente (**Frontend**) é um aplicativo móvel (**Flutter**) que consome os dados do servidor.
 
 #### 2.6.1 Módulos do Sistema (Backend - Django) 
 
@@ -153,7 +198,7 @@ O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas*
 
 #### 2.6.4 Diagrama de Classes 
 
-O diagrama de classes apresentado a seguir ilustra a estrutura básica do sistema Apoia+, mostrando os principais componentes e como eles se relacionam entre si. Essa representação permite visualizar os elementos fundamentais que compõem a aplicação, incluindo as entidades principais, suas características e as conexões existentes. 
+O diagrama de classes apresentado a seguir ilustra a estrutura básica do sistema **Apoia+**, mostrando os principais componentes e como eles se relacionam entre si. Essa representação permite visualizar os elementos fundamentais que compõem a aplicação, incluindo as entidades principais, suas características e as conexões existentes.
 ***
 
 ![Diagrama de classes, Elaborado por: Edson Pereira](/docs/imagens/UML_Classes.png)
