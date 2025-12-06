@@ -273,6 +273,11 @@ Os pacotes que compõem essa camada são:
 
 O modelo entidade-relacionamento representa a estrutura lógica dos dados do software Apoia+, descrevendo as entidades do sistema, além de descrever a cardinalidade entre as entidades.
 
+![Modelo Entidade-Relacionamento](../imagens/Modelo_Entidade_Relacionamento.png)
+
+<p align="center"><em>Figura 4 - Modelo Entidade-Relacionamento</em></p>
+<p align="center"><em>Fonte: <a href="https://github.com/LucasItacaramby">Lucas Itacaramby</a></em></p>
+
 #### Tabela 1: Entidades do Sistema 
 | Entidades | Descrição |
 | :--- | :--- |
