@@ -199,6 +199,7 @@ O sistema Apoia+ é organizado em uma arquitetura **Cliente-Servidor em camadas*
 #### 2.6.4 Diagrama de Classes 
 
 O diagrama de classes apresentado a seguir ilustra a estrutura básica do sistema **Apoia+**, mostrando os principais componentes e como eles se relacionam entre si. Essa representação permite visualizar os elementos fundamentais que compõem a aplicação, incluindo as entidades principais, suas características e as conexões existentes.
+
 ***
 
 ![Diagrama de classes](../imagens/Diagrama_Classes.png)
@@ -216,67 +217,103 @@ As entidades centrais são **Usuário**, **ONG**, **Evento** e **Participação*
 * A relação **muitos-para-muitos (N:M)** entre **Usuários** e **Eventos** é resolvida através da classe associativa **Participacao**.
 * A classe **Participacao** conecta Usuário e Evento (usando `id_usuario`, `id_evento`) e armazena atributos da inscrição, como `status_confirmacao`.
 
----
+#### 2.6.5 Diagrama de Pacotes
 
-### 2.6.5 Diagrama de Pacotes
-
-O sistema é estruturado segundo uma arquitetura em camadas, dividida em três principais níveis: **Camada de Apresentação**, **Camada de Lógica de Negócios** e **Camada de Dados**. Essa organização visa promover a separação de responsabilidades, facilitando a manutenção, a escalabilidade e o entendimento geral da aplicação.
-
----
-
-#### 1. Camada de Apresentação
-
-A **Camada de Apresentação** é responsável pela interface do sistema com o usuário, englobando todas as telas e componentes visuais da aplicação. Nela estão definidos os módulos de interação e navegação, que permitem que usuários e ONGs acessem, visualizem e manipulem as informações disponíveis.
-
-Os principais pacotes dessa camada incluem:
-
-* **TelaLogin**: ponto central de acesso ao sistema, conectando tanto usuários quanto ONGs.
-* **TelaCadastroUsuário** e **TelaCadastroONG**: responsáveis pelo processo de registro de novos usuários e organizações.
-* **TelaHome**: página inicial, que serve como hub de navegação para outras funcionalidades.
-* **TelaListaEventos** e **TelaDetalharEvento**: exibem eventos disponíveis e suas informações detalhadas.
-* **TelaGerenciarEventos**: voltada à administração de eventos por parte das ONGs.
-* **TelaListarONGs** e **TelaPerfilONG**: possibilita visualizar e acessar informações sobre as ONGs cadastradas.
-
----
-
-#### 2. Camada de Lógica de Negócios
-
-A **Camada de Lógica de Negócios** centraliza as regras e operações que definem o comportamento do sistema. É nessa camada que ocorrem os processamentos, validações e controles que sustentam o funcionamento das funcionalidades apresentadas ao usuário.
-
-Os pacotes principais dessa camada são:
-
-* **Controle de Usuário**: gerencia o fluxo de cadastro, autenticação e atualização de informações dos usuários.
-* **Controle de Evento**: responsável pelas operações relacionadas aos eventos como criação, edição, exclusão e listagem.
-* **CRUD de Perfis**: implementa as operações básicas de persistência (Criar, Ler, Atualizar e Deletar) para os perfis de usuários e ONGs.
-
----
-
-#### 3. Camada de Dados
-
-A **Camada de Dados** é responsável pelo armazenamento, recuperação e persistência das informações manipuladas pela aplicação. Ela integra o sistema com o banco de dados e define a estrutura de acesso e manipulação dos dados de forma segura e eficiente.
-
-Os pacotes que compõem essa camada são:
-
-* **PostgreSQL**: sistema gerenciador de banco de dados relacional utilizado para armazenar todas as informações da aplicação como dados de usuários, ONGs e eventos.
-* **Django**: framework que intermedeia a comunicação entre a camada de lógica de negócios e o banco de dados, oferecendo ferramentas para o mapeamento objeto-relacional (ORM), além de facilitar a criação de modelos, migrações e consultas.
-
-
- 
-***
-
-![Diagrama de pacotes, Elaborado por: Lucas Itacamby](/docs/imagens/Diagrama_Pacotes.png)
-
-**Fonte:** elaborado por Lucas Itacaramby (2025)
+O diagrama de pacotes apresentado representa a organização estrutural do projeto **Apoia+**, que adota um modelo de desenvolvimento baseado em monorepo. Esse formato permite que tanto o backend quanto o frontend coexistam em um mesmo repositório, mantendo uma separação clara entre responsabilidades, mas facilitando integração, versionamento e manutenção. Cada parte do sistema é organizada em workspaces independentes, compondo os módulos principais do projeto.
 
 ***
+
+![Diagrama de pacotes](../imagens/Diagrama_Pacotes.png)
+
+<p align="center"><em>Figura 3 - Diagrama de pacotes</em></p>
+<p align="center"><em>Fonte: <a href="https://github.com/LucasItacaramby">Lucas Itacaramby</a></em></p>
+
+***
+
+### Estrutura Geral do Monorepo
+
+Seguindo a estrutura de Cliente-Servidor em construção de software MonoRepo, temos a seguinte visão lógida do software:
+
+> Estrutura Macro
+
+Na camada superior do diagrama está o pacote **Apoia+** Monorepo (*Workspaces*). Ele funciona como o ambiente de trabalho unificado que abriga os dois subsistemas principais do projeto:
+
+* Apoia+ (Backend) — responsável pela lógica de servidor, autenticação, gestão de dados e execução das regras de negócio
+* mobile_apoia (Frontend) — responsável pela interface do usuário e pela lógica de interação no aplicativo mobile construído em **Flutter**
+
+Essa estrutura deixa explícito que ambos os módulos coexistem no mesmo repositório, mas mantêm autonomia funcional.
+
+> Módulos Principais
+
+As pastas `Apoia+/` e `mobile_apoia/` possuem os componentes principais do sistema:
+
+### Pacote Apoia+ (Backend)
+
+O pacote **Apoia+** (Backend) representa a implementação da API e de toda a lógica de backend utilizando o framework **Django**. Ele agrupa dois elementos centrais da aplicação:
+
+#### **> Models (autenticação, eventos, participações)**
+
+Este pacote concentra os modelos de domínio responsáveis por representar e manipular as principais entidades do sistema, como:
+
+* `Apoia+/autenticacao`
+* `Apoia+/eventos`
+* `Apoia+/participacoes`
+
+Ele encapsula as regras de consistência e a estrutura dos dados que serão persistidos no banco.
+
+Os **testes de API** são configurados com o **pytest** e estão na pasta `Apoia+/tests`, com foco em testes de integração e testes unitários.
+
+#### **> Database (PostgreSQL)**
+
+Representa o banco de dados utilizado pelo backend, implementado em **PostgreSQL** e rodando a partir de um container do **Docker**.
+O backend interage com o **PostgreSQL** garantindo abstração e controle sobre operações como consultas, inserções e atualizações.
+
+O diagrama reforça que o backend é responsável por expor endpoints HTTP/S, que serão consumidos pelo frontend.
+
+### Pacote mobile_apoia (Frontend)
+
+O pacote mobile_apoia (Frontend) representa o aplicativo mobile desenvolvido em **Flutter**. Esse módulo reúne todos os componentes relacionados à interface e lógica de cliente. Seus subpacotes são:
+
+#### **> Telas (Flutter)**
+
+Contém as páginas visuais do aplicativo, incluindo:
+
+* Tela de login
+* Tela de cadastro
+* Visualização de eventos
+* Listagens
+* Detalhes de ONGs e ações
+
+São elementos totalmente focados na interação com o usuário.
+
+#### **> Componentes (UI)**
+
+Reúne elementos reutilizáveis que compõem a interface gráfica, como:
+
+* Botões
+* Cards
+* Form inputs
+* Layouts comuns
+
+Este pacote garante maior organização, modularidade e reaproveitamento no frontend.
+
+### Comunicação entre Backend e Frontend
+
+O diagrama destaca a relação entre os dois pacotes principais:
+O mobile_apoia (Frontend) consome os serviços publicados pelo Apoia+ (Backend) através de requisições HTTP/S.
+
 ### 2.7 Visão de Dados (MER) 
 
-O modelo entidade-relacionamento representa a estrutura lógica dos dados do software Apoia+, descrevendo as entidades do sistema, além de descrever a cardinalidade entre as entidades.
+O modelo entidade-relacionamento representa a estrutura lógica dos dados do software **Apoia+**, descrevendo as entidades do sistema, além de descrever a cardinalidade entre as entidades.
+
+***
 
 ![Modelo Entidade-Relacionamento](../imagens/Modelo_Entidade_Relacionamento.png)
 
 <p align="center"><em>Figura 4 - Modelo Entidade-Relacionamento</em></p>
 <p align="center"><em>Fonte: <a href="https://github.com/LucasItacaramby">Lucas Itacaramby</a></em></p>
+
+***
 
 #### Tabela 1: Entidades do Sistema 
 | Entidades | Descrição |
