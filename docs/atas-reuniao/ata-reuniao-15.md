@@ -2,7 +2,7 @@
 | :----: | :--: | :--------------------: | :-------------------: |
 | 1.0 | 08/12/2025 | Registro da ata de reunião 15 | Edson Pereira |
 
-# Reunião 1 - Gilgamesh -
+# Reunião 15 - Gilgamesh -
 
 ## Informações gerais
 **Data:** 08/12/2025 <br> 
