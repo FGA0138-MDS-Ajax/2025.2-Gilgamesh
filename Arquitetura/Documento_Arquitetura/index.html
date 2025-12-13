@@ -1,0 +1,2195 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Backlog%20do%20Produto/Backlog%20do%20Produto/">
+      
+      
+        <link rel="next" href="../../Organiza%C3%A7%C3%A3o%20da%20equipe/Pareamento_duplas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Documento de arquitetura - Documentação</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documento-de-arquitetura" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentação" class="md-header__button md-logo" aria-label="Documentação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documento de arquitetura
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentação" class="md-nav__button md-logo" aria-label="Documentação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentação
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Visao%20de%20produto/url-figma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão de produto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Backlog%20do%20Produto/Backlog%20do%20Produto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog do Produto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documento de arquitetura
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documento de arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão Geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-revisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Histórico de Revisão
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introdução
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-proposito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Propósito
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Escopo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-representacao-arquitetural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Representação Arquitetural
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Representação Arquitetural">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Definições
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-justificativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Justificativa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-detalhamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Detalhamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-metas-e-restricoes-arquiteturais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Metas e Restrições Arquiteturais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-backlog-do-produto-escopo-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Backlog do Produto (Escopo do Produto)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-visao-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Visão Lógica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-geral-do-monorepo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura Geral do Monorepo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pacote-apoia-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pacote Apoia+ (Backend)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pacote-mobile_apoia-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pacote mobile_apoia (Frontend)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comunicacao-entre-backend-e-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comunicação entre Backend e Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-visao-de-dados-mer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Visão de Dados (MER)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-visao-de-implantacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Visão de Implantação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-restricoes-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 Restrições Adicionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Bibliografia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Organiza%C3%A7%C3%A3o%20da%20equipe/Pareamento_duplas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pareamento de duplas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atas de Reunião
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atas de Reunião
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-7-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-9-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-14-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-16-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/ata-reuniao-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ata 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão Geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-revisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Histórico de Revisão
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introdução
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-proposito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Propósito
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Escopo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-representacao-arquitetural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Representação Arquitetural
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Representação Arquitetural">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Definições
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-justificativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Justificativa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-detalhamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Detalhamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-metas-e-restricoes-arquiteturais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Metas e Restrições Arquiteturais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-backlog-do-produto-escopo-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Backlog do Produto (Escopo do Produto)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-visao-logica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Visão Lógica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-geral-do-monorepo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura Geral do Monorepo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pacote-apoia-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pacote Apoia+ (Backend)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pacote-mobile_apoia-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pacote mobile_apoia (Frontend)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comunicacao-entre-backend-e-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comunicação entre Backend e Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-visao-de-dados-mer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Visão de Dados (MER)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-visao-de-implantacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Visão de Implantação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-restricoes-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 Restrições Adicionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Bibliografia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="documento-de-arquitetura">Documento de Arquitetura</h1>
+<h2 id="visao-geral">Visão Geral</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Projeto</strong></td>
+<td style="text-align: left;">Apoia+</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Disciplina</strong></td>
+<td style="text-align: left;">Métodos de Desenvolvimento de Software (MDS)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Versão</strong></td>
+<td style="text-align: left;">2.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="historico-de-revisao">Histórico de Revisão</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Versão</th>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: left;">Autor(es)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">30/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Tópico 1.1</td>
+<td style="text-align: left;">Ester</td>
+</tr>
+<tr>
+<td style="text-align: left;">30/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Tópico 1.2</td>
+<td style="text-align: left;">Artur</td>
+</tr>
+<tr>
+<td style="text-align: left;">30/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Tópicos 2.1, 2.2, 2.8</td>
+<td style="text-align: left;">Edson</td>
+</tr>
+<tr>
+<td style="text-align: left;">30/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Tópico 2.3</td>
+<td style="text-align: left;">Lucas</td>
+</tr>
+<tr>
+<td style="text-align: left;">30/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Tópico 2.4</td>
+<td style="text-align: left;">Guilherme Carvalho</td>
+</tr>
+<tr>
+<td style="text-align: left;">31/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Tópico 2.6</td>
+<td style="text-align: left;">Edson e Lucas</td>
+</tr>
+<tr>
+<td style="text-align: left;">31/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Tópico 2.7</td>
+<td style="text-align: left;">Guilherme Carvalho</td>
+</tr>
+<tr>
+<td style="text-align: left;">31/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Tópico 2.8</td>
+<td style="text-align: left;">Artur e Ester</td>
+</tr>
+<tr>
+<td style="text-align: left;">31/10</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Revisão ABNT</td>
+<td style="text-align: left;">Maria Luana</td>
+</tr>
+<tr>
+<td style="text-align: left;">28/11</td>
+<td style="text-align: left;">1.1</td>
+<td style="text-align: left;">Tópicos 1.2, 2.6, 2.7</td>
+<td style="text-align: left;">Guilherme Carvalho</td>
+</tr>
+<tr>
+<td style="text-align: left;">06/12</td>
+<td style="text-align: left;">1.2</td>
+<td style="text-align: left;">Tópicos 2.3, 2.6</td>
+<td style="text-align: left;">Lucas</td>
+</tr>
+<tr>
+<td style="text-align: left;">12/12</td>
+<td style="text-align: left;">2.0</td>
+<td style="text-align: left;">Tópicos 1.6, 2.3, 2.5</td>
+<td style="text-align: left;">Edson</td>
+</tr>
+</tbody>
+</table>
+<h2 id="autores">Autores</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Matrícula</th>
+<th style="text-align: left;">Nome</th>
+<th style="text-align: left;">Descrição do papel assumido na equipe</th>
+<th style="text-align: left;">% de contribuição ao trabalho (*)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">232024527</td>
+<td style="text-align: left;">Artur</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">232025730</td>
+<td style="text-align: left;">Edson</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">241012211</td>
+<td style="text-align: left;">Ester</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">241011822</td>
+<td style="text-align: left;">Guilherme C</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">222006777</td>
+<td style="text-align: left;">Guilherme</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">231026456</td>
+<td style="text-align: left;">Lucas</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">231012002</td>
+<td style="text-align: left;">Luis Fernando</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">241011448</td>
+<td style="text-align: left;">Maria Luana</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">190129344</td>
+<td style="text-align: left;">Paulo Vinicius</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">241011878</td>
+<td style="text-align: left;">Thauany</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">241012392</td>
+<td style="text-align: left;">Vinicius</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-introducao">1. Introdução</h2>
+<h3 id="11-proposito">1.1 Propósito</h3>
+<p>Este documento descreve a visão arquitetural abrangente do <strong>Apoia+</strong>, desenvolvido como parte de um projeto acadêmico da disciplina de Métodos de Desenvolvimento de Software (MDS), no segundo semestre de 2025. O propósito é registrar as decisões arquiteturais tomadas durante o planejamento e implementação do sistema, servindo como um guia para desenvolvedores e testadores.</p>
+<p>Ele descreve as escolhas tecnológicas, os padrões de design e a decomposição de componentes adotados para atender aos requisitos específicos de conexão entre voluntários e ONGs no DF, facilitando a organização e participação em eventos para um desenvolvimento coeso e um produto escalável.</p>
+<h3 id="12-escopo">1.2 Escopo</h3>
+<p>O presente documento descreve a arquitetura do sistema <strong>“Apoia+”</strong>, uma aplicação móvel desenvolvida com o objetivo de conectar pessoas dispostas a doar para instituições sociais e ONGs cadastradas, promovendo o engajamento solidário e facilitando o acesso a campanhas de apoio em diferentes regiões. O sistema busca centralizar informações sobre campanhas ativas, simplificar o processo de doação e fortalecer a visibilidade das organizações sociais, alinhando-se a objetivos de desenvolvimento sustentável, como redução das desigualdades e erradicação da pobreza.</p>
+<p>O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessível, responsiva e intuitiva, compatível tanto com dispositivos móveis quanto navegadores web, e que permita:</p>
+<ul>
+<li>O cadastro e autenticação de usuários (doadores e representantes de ONGs);</li>
+<li>O cadastro e a gestão de ONGs e campanhas de arrecadação;</li>
+<li>A busca e visualização de pontos de apoio e campanhas próximas;</li>
+<li>centralizar informações de como doar e outras maneiras de ajudar;</li>
+<li>A criação e divulgação de eventos por parte das ONGs cadastradas, com a possibilidade de usuários visualizarem e escolherem participar ou não;</li>
+</ul>
+<p>Dessa forma, o <strong>Apoia+</strong> visa criar um ambiente digital de impacto social positivo, promovendo a solidariedade e tornando o processo de doação mais simples, transparente e acessível a todos.</p>
+<h2 id="2-representacao-arquitetural">2. Representação Arquitetural</h2>
+<h3 id="21-definicoes">2.1 Definições</h3>
+<p>O sistema seguirá uma arquitetura em camadas, com o modelo arquitetural escolhido <strong>MVC (Model–View–Controller)</strong> com o Framework <strong>Django</strong>.</p>
+<h3 id="22-justificativa">2.2 Justificativa</h3>
+<p>A escolha da arquitetura em MVC é uma consequência direta da adoção dos frameworks <strong>Django</strong> e <strong>Flutter</strong>, que foram selecionados com base nas necessidades do projeto e no plano de capacitação da equipe.  </p>
+<p>A arquitetura MVC possui como princípios a organização e a reutilização de código, a abordagem MVC do Django é adequada aos requisitos de nosso produto. Será principalmente por meio do Django que a lógica de negócios (Controller) e a estrutura de dados (Model) serão implementadas, o que é ideal para construir a API RESTful que o sistema necessita.</p>
+<p>Concluímos que esta arquitetura de backend se integra bem ao cliente desenvolvido em Flutter, que consumirá os endpoints (rotas da API) gerados pelo Django. </p>
+<p>Dessa forma, acreditamos que essa escolha será vantajosa não apenas em termos de organização, mas também por facilitar o desenvolvimento, a manutenção, os testes e as possíveis modificações futuras no projeto. </p>
+<h3 id="23-detalhamento">2.3 Detalhamento</h3>
+<h4 id="231-arquitetura-geral-do-sistema-apoia">2.3.1 Arquitetura Geral do Sistema Apoia+</h4>
+<p>A arquitetura do sistema <strong>Apoia+</strong> segue o padrão <strong>MVC (Model–View–Controller)</strong>, distribuído entre duas camadas principais:</p>
+<ul>
+<li>
+<p>Backend, desenvolvido em <strong>Django</strong>, responsável por toda lógica de negócios, regras de autenticação, processamento de dados e comunicação com o banco de dados.</p>
+</li>
+<li>
+<p>Frontend, desenvolvido em <strong>Flutter</strong>, responsável pela interação direta com o usuário.</p>
+</li>
+</ul>
+<p>O diagrama representa o fluxo completo entre essas camadas, descrevendo como os componentes do sistema se organizam e interagem.</p>
+<h4 id="232-view-flutter-interface-e-interacao-com-o-usuario">2.3.2 View (Flutter) – Interface e Interação com o Usuário</h4>
+<p>No topo da arquitetura está a <strong>View</strong>, representada pela aplicação <strong>Flutter</strong>. É neste nível que ocorre toda a interação do usuário com a interface, incluindo:</p>
+<ul>
+<li>Telas de login e cadastro</li>
+<li>Listagem de usuários</li>
+<li>Tela de criação de eventos</li>
+<li>Tela de edição de perfil</li>
+<li>Tela de perfil informativo para ongs</li>
+<li>Visualização de dados gerais do sistema</li>
+</ul>
+<p>A <strong>View</strong> tem como função consumir os endpoints fornecidos pelo <strong>Django</strong> e renderizar no aplicativo as informações retornadas pela API.</p>
+<h4 id="233-controller-django-views-logica-de-negocio-e-rotas-da-api">2.3.3 Controller (Django Views) – Lógica de Negócio e Rotas da API</h4>
+<p>O <strong>Controller</strong>, implementado no <strong>Django</strong> através de suas <strong>Views</strong> (RegisterView, LoginView, UserListView, CreateEventsView, entre outras), recebe as requisições feitas pelo <strong>Flutter</strong> e atua como intermediário entre o frontend e o backend. Suas principais responsabilidades incluem:</p>
+<ul>
+<li>Interpretar e validar requisições do cliente</li>
+<li>Coordenar operações de leitura e escrita no banco de dados</li>
+<li>Aplicar regras de negócio</li>
+<li>Formatar e retornar respostas apropriadas para o <strong>Flutter</strong></li>
+</ul>
+<p>Ou seja, toda a lógica que determina como as operações devem ocorrer fica concentrada no <strong>Controller</strong>, que decide o que solicitar ao <strong>Model</strong> e o que retornar à <strong>View</strong>.</p>
+<h4 id="234-model-django-models-representacao-e-manipulacao-dos-dados">2.3.4 Model (Django Models) – Representação e Manipulação dos Dados</h4>
+<p>O <strong>Model</strong> corresponde à camada de dados do <strong>Django</strong>, responsável por representar e manipular as entidades centrais do sistema. Entre os modelos utilizados estão:</p>
+<ul>
+<li>User (classe abstrata) — base para os diferentes tipos de usuários</li>
+<li>Usuário Padrão — usuários comuns do sistema</li>
+<li>ONGs — entidades cadastradas</li>
+<li>Eventos — atividades criadas pelas ONGs</li>
+</ul>
+<p>Essa camada possui a função de fornecer dados processados ao <strong>Controller</strong>, além de executar operações como consultas, inserções, atualizações ou remoções no banco de dados.</p>
+<h4 id="235-banco-de-dados-armazenamento-com-postgresql">2.3.5 Banco de Dados – Armazenamento com PostgreSQL</h4>
+<p>O sistema <strong>Apoia+</strong> utiliza o <strong>PostgreSQL</strong> como banco de dados relacional para armazenamento de informações da aplicação. O <strong>PostgreSQL</strong> foi escolhido por sua robustez, conformidade com o padrão SQL, escalabilidade e suporte nativo a transações complexas, tornando-o ideal para aplicações que exigem integridade e consistência. No banco de dados estão armazenados:</p>
+<ul>
+<li>Informações de usuários, incluindo dados de autenticação e perfis</li>
+<li>Registros de ONGs e seus dados administrativos</li>
+<li>Eventos criados pelas ONGs</li>
+</ul>
+<p>Após o processamento, o banco retorna os dados necessários, permitindo que os <strong>Models</strong> os repassem ao <strong>Controller</strong> de maneira segura e estruturada.</p>
+<hr />
+<p><img alt="Diagrama de Arquitetura" src="../../imagens/Representacao_Arquitetura.png" /></p>
+<p align="center"><em>Figura 1 - Representação da Arquitetura</em></p>
+<p align="center"><em>Fonte: <a href="https://github.com/LucasItacaramby">Lucas Itacaramby</a></em></p>
+
+<hr />
+<h3 id="24-metas-e-restricoes-arquiteturais">2.4 Metas e Restrições Arquiteturais</h3>
+<ul>
+<li><strong>Padrões de codificação:</strong> O código deve seguir as melhores práticas de codificação para Python/Django (PEP 8).</li>
+<li><strong>Manutenibilidade:</strong> O sistema deve ser modular e possuir baixo acoplamento entre os componentes em visão de um projeto mais fácil de se manter e realizar alterações.</li>
+<li><strong>Segurança:</strong> As APIs desenvolvidas no backend Django devem seguir as melhores práticas possíveis e passar em testes como aqueles definidos pelo OWASP</li>
+<li><strong>Versionamento:</strong> O padrão usado para realizar mudanças no código e utilizar a ferramenta Git eficientemente será o <strong>Git Flow</strong>.</li>
+</ul>
+<p>Todos os elementos mencionados contribuem para um desenvolvimento de software mais ágil e eficiente, no qual os membros da equipe permanecem alinhados na codificação e nas metas estabelecidas. Em última instância, esses objetivos e restrições visam garantir um produto confiável e proporcionar uma experiência satisfatória ao usuário.</p>
+<h3 id="25-backlog-do-produto-escopo-do-produto">2.5 Backlog do Produto (Escopo do Produto)</h3>
+<p>No escopo do projeto ‘Apoia+’, a equipe decidiu por uma aplicação mobile para Android com intuito de suprir a necessidade de voluntários e de Organizações Não Governamentais (ONGs) em causas humanitárias, mais especificamente em causas envolvendo indivíduos em situação de rua.</p>
+<p>Assim, o produto de software tem como funcionalidades:</p>
+<ul>
+<li>Sistema de cadastro e login;</li>
+<li>Perfil público com informações pertinentes para voluntários e ONGs;</li>
+<li>CRUD (Create, Read, Update e Delete) de eventos para ONGs;</li>
+<li>Divulgação de eventos;</li>
+<li>Possibilidade de se inscrever antecipadamente em eventos;</li>
+<li>Geração de uma lista com participantes com presença confirmada no evento;</li>
+</ul>
+<p>Essas funcionalidades surgem para permitir uma maior integração entres voluntários e ONGs, assim centralizando distribuição de informações em apenas um canal de comunicação. A partir disso, a escolha arquitetural do produto surge em razão da experiencia prévia da equipe, assim escolhendo modelo <strong>MVC (Model–View–Controller)</strong>, portanto essa escolha juntamente com a decisão de adotar o <em>framework</em> <strong>Django</strong>, estabeleceu o padrão final sendo o <strong>MVC (Model–View–Controller)</strong> para o framework escolhido.</p>
+<h3 id="26-visao-logica">2.6 Visão Lógica</h3>
+<p>O sistema Apoia+ é organizado em uma arquitetura <strong>Cliente-Servidor em camadas</strong>. A camada de Servidor (<strong>Backend</strong>) segue o padrão <strong>MVC</strong> (Model–View–Controller) com <strong>Django</strong> , e a camada de Cliente (<strong>Frontend</strong>) é um aplicativo móvel (<strong>Flutter</strong>) que consome os dados do servidor.</p>
+<h4 id="261-modulos-do-sistema-backend-django">2.6.1 Módulos do Sistema (Backend - Django)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Módulo (App)</strong></th>
+<th style="text-align: left;"><strong>Razão Lógica</strong></th>
+<th style="text-align: left;"><strong>Componentes Principais</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Autenticação</strong> (<code>autenticacao</code>)</td>
+<td style="text-align: left;">Gerenciar cadastro, login e segurança</td>
+<td style="text-align: left;"><strong>Model:</strong> Usuário.<br><strong>View:</strong> CadastroView, LoginView, LogoutView.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eventos</strong> (<code>eventos</code>)</td>
+<td style="text-align: left;">Permite o CRUD de eventos</td>
+<td style="text-align: left;"><strong>Model:</strong> Eventos (tipo_usuario: ong).<br><strong>View:</strong> ONGView.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Participação</strong> (<code>participacoes</code>)</td>
+<td style="text-align: left;">Permite gerenciar a inscrição de voluntários nos eventos</td>
+<td style="text-align: left;"><strong>Model:</strong>Participação.<br><strong>View:</strong> EventoView, ParticipacaoView.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Administração</strong></td>
+<td style="text-align: left;">Gerencia usuários e configurações do sistema</td>
+<td style="text-align: left;">Utiliza o módulo <code>django.contrib.admin</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="262-modulos-do-sistema-frontend-flutter">2.6.2 Módulos do Sistema (Frontend - Flutter)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Módulo (App)</th>
+<th style="text-align: left;">Telas</th>
+<th style="text-align: left;">Serviços</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Autenticação</strong></td>
+<td style="text-align: left;">TelaLogin, TelaCadastroUsuario, TelaCadastroONG</td>
+<td style="text-align: left;"><strong>AuthService</strong> (chama HTTP para LoginView e RegisterView).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ONGs e Eventos</strong></td>
+<td style="text-align: left;">Home, TelaListarEventos, TelaListarONGs, TelaDetalharEvento, TelaPerfilONG, TelaGerenciarEventos</td>
+<td style="text-align: left;"><strong>EventoService</strong> (Chama /eventos), <strong>ONGService</strong> (Chama /ongs).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="263-comunicacao-entre-modulos-interfaces">2.6.3 Comunicação entre Módulos (Interfaces)</h4>
+<ul>
+<li><strong>APIs REST:</strong> O Backend (Django) expõe endpoints RESTful (ex: <code>/api/v1/eventos</code>) que o Frontend (Flutter) consome via requisição HTTPS.</li>
+<li><strong>Banco de Dados:</strong> PostgreSQL é acessado <strong>apenas</strong> pelo Backend (Django). O Frontend (Flutter) nunca se comunica diretamente com o banco de dados.</li>
+</ul>
+<h4 id="264-diagrama-de-classes">2.6.4 Diagrama de Classes</h4>
+<p>O diagrama de classes apresentado a seguir ilustra a estrutura básica do sistema <strong>Apoia+</strong>, mostrando os principais componentes e como eles se relacionam entre si. Essa representação permite visualizar os elementos fundamentais que compõem a aplicação, incluindo as entidades principais, suas características e as conexões existentes.</p>
+<hr />
+<p><img alt="Diagrama de classes" src="../../imagens/Diagrama_Classes.png" /></p>
+<p align="center"><em>Figura 2 - Diagrama de classes</em></p>
+<p align="center"><em>Fonte: <a href="https://github.com/edso-n">Edson Pereira</a></em></p>
+
+<hr />
+<p>As entidades centrais são <strong>Usuário</strong>, <strong>ONG</strong>, <strong>Evento</strong> e <strong>Participação</strong>.</p>
+<ul>
+<li>A classe <strong>Usuário</strong> é a base para qualquer pessoa no sistema.</li>
+<li>Existe uma relação <strong>um-para-um (1:1)</strong> entre <strong>Usuário</strong> e <strong>ONG</strong>, onde o Usuário responsável é vinculado à ONG através do atributo <code>id_responsavel</code>.</li>
+<li>Um usuário do tipo ONG pode cadastrar múltiplos <strong>Eventos</strong> (<strong>1:N</strong>).</li>
+<li>A relação <strong>muitos-para-muitos (N:M)</strong> entre <strong>Usuários</strong> e <strong>Eventos</strong> é resolvida através da classe associativa <strong>Participacao</strong>.</li>
+<li>A classe <strong>Participacao</strong> conecta Usuário e Evento (usando <code>id_usuario</code>, <code>id_evento</code>) e armazena atributos da inscrição, como <code>status_confirmacao</code>.</li>
+</ul>
+<h4 id="265-diagrama-de-pacotes">2.6.5 Diagrama de Pacotes</h4>
+<p>O diagrama de pacotes apresentado representa a organização estrutural do projeto <strong>Apoia+</strong>, que adota um modelo de desenvolvimento baseado em monorepo. Esse formato permite que tanto o backend quanto o frontend coexistam em um mesmo repositório, mantendo uma separação clara entre responsabilidades, mas facilitando integração, versionamento e manutenção. Cada parte do sistema é organizada em workspaces independentes, compondo os módulos principais do projeto.</p>
+<hr />
+<p><img alt="Diagrama de pacotes" src="../../imagens/Diagrama_Pacotes.png" /></p>
+<p align="center"><em>Figura 3 - Diagrama de pacotes</em></p>
+<p align="center"><em>Fonte: <a href="https://github.com/LucasItacaramby">Lucas Itacaramby</a></em></p>
+
+<hr />
+<h3 id="estrutura-geral-do-monorepo">Estrutura Geral do Monorepo</h3>
+<p>Seguindo a estrutura de Cliente-Servidor em construção de software MonoRepo, temos a seguinte visão lógida do software:</p>
+<blockquote>
+<p>Estrutura Macro</p>
+</blockquote>
+<p>Na camada superior do diagrama está o pacote <strong>Apoia+</strong> Monorepo (<em>Workspaces</em>). Ele funciona como o ambiente de trabalho unificado que abriga os dois subsistemas principais do projeto:</p>
+<ul>
+<li>Apoia+ (Backend) — responsável pela lógica de servidor, autenticação, gestão de dados e execução das regras de negócio</li>
+<li>mobile_apoia (Frontend) — responsável pela interface do usuário e pela lógica de interação no aplicativo mobile construído em <strong>Flutter</strong></li>
+</ul>
+<p>Essa estrutura deixa explícito que ambos os módulos coexistem no mesmo repositório, mas mantêm autonomia funcional.</p>
+<blockquote>
+<p>Módulos Principais</p>
+</blockquote>
+<p>As pastas <code>Apoia+/</code> e <code>mobile_apoia/</code> possuem os componentes principais do sistema:</p>
+<h3 id="pacote-apoia-backend">Pacote Apoia+ (Backend)</h3>
+<p>O pacote <strong>Apoia+</strong> (Backend) representa a implementação da API e de toda a lógica de backend utilizando o framework <strong>Django</strong>. Ele agrupa dois elementos centrais da aplicação:</p>
+<h4 id="models-autenticacao-eventos-participacoes"><strong>&gt; Models (autenticação, eventos, participações)</strong></h4>
+<p>Este pacote concentra os modelos de domínio responsáveis por representar e manipular as principais entidades do sistema, como:</p>
+<ul>
+<li><code>Apoia+/autenticacao</code></li>
+<li><code>Apoia+/eventos</code></li>
+<li><code>Apoia+/participacoes</code></li>
+</ul>
+<p>Ele encapsula as regras de consistência e a estrutura dos dados que serão persistidos no banco.</p>
+<p>Os <strong>testes de API</strong> são configurados com o <strong>pytest</strong> e estão na pasta <code>Apoia+/tests</code>, com foco em testes de integração e testes unitários.</p>
+<h4 id="database-postgresql"><strong>&gt; Database (PostgreSQL)</strong></h4>
+<p>Representa o banco de dados utilizado pelo backend, implementado em <strong>PostgreSQL</strong> e rodando a partir de um container do <strong>Docker</strong>.
+O backend interage com o <strong>PostgreSQL</strong> garantindo abstração e controle sobre operações como consultas, inserções e atualizações.</p>
+<p>O diagrama reforça que o backend é responsável por expor endpoints HTTP/S, que serão consumidos pelo frontend.</p>
+<h3 id="pacote-mobile_apoia-frontend">Pacote mobile_apoia (Frontend)</h3>
+<p>O pacote mobile_apoia (Frontend) representa o aplicativo mobile desenvolvido em <strong>Flutter</strong>. Esse módulo reúne todos os componentes relacionados à interface e lógica de cliente. Seus subpacotes são:</p>
+<h4 id="telas-flutter"><strong>&gt; Telas (Flutter)</strong></h4>
+<p>Contém as páginas visuais do aplicativo, incluindo:</p>
+<ul>
+<li>Tela de login</li>
+<li>Tela de cadastro</li>
+<li>Visualização de eventos</li>
+<li>Listagens</li>
+<li>Detalhes de ONGs e ações</li>
+</ul>
+<p>São elementos totalmente focados na interação com o usuário.</p>
+<h4 id="componentes-ui"><strong>&gt; Componentes (UI)</strong></h4>
+<p>Reúne elementos reutilizáveis que compõem a interface gráfica, como:</p>
+<ul>
+<li>Botões</li>
+<li>Cards</li>
+<li>Form inputs</li>
+<li>Layouts comuns</li>
+</ul>
+<p>Este pacote garante maior organização, modularidade e reaproveitamento no frontend.</p>
+<h3 id="comunicacao-entre-backend-e-frontend">Comunicação entre Backend e Frontend</h3>
+<p>O diagrama destaca a relação entre os dois pacotes principais:
+O mobile_apoia (Frontend) consome os serviços publicados pelo Apoia+ (Backend) através de requisições HTTP/S.</p>
+<h3 id="27-visao-de-dados-mer">2.7 Visão de Dados (MER)</h3>
+<p>O modelo entidade-relacionamento representa a estrutura lógica dos dados do software <strong>Apoia+</strong>, descrevendo as entidades do sistema, além de descrever a cardinalidade entre as entidades.</p>
+<hr />
+<p><img alt="Modelo Entidade-Relacionamento" src="../../imagens/Modelo_Entidade_Relacionamento.png" /></p>
+<p align="center"><em>Figura 4 - Modelo Entidade-Relacionamento</em></p>
+<p align="center"><em>Fonte: <a href="https://github.com/LucasItacaramby">Lucas Itacaramby</a></em></p>
+
+<hr />
+<h4 id="tabela-1-entidades-do-sistema">Tabela 1: Entidades do Sistema</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidades</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Usuário</strong></td>
+<td style="text-align: left;">Representa os usuários cadastrados no sistema, podendo ser ONGs ou Voluntários, armazenando dados essenciais</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evento</strong></td>
+<td style="text-align: left;">Armazena as informações sobre os eventos criados, como nome, descrição, data, local, vagas e número de participantes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Participação</strong></td>
+<td style="text-align: left;">Representa o vínculo entre um usuário e um evento, atuando como intermediário</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tabela-2-relacao-e-cardinalidade-entre-entidades">Tabela 2: Relação e Cardinalidade entre Entidades</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidade A</th>
+<th style="text-align: left;">Relação</th>
+<th style="text-align: left;">Entidade B</th>
+<th style="text-align: left;">Cardinalidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Usuário</td>
+<td style="text-align: left;">Cria</td>
+<td style="text-align: left;">Evento</td>
+<td style="text-align: left;">1:N (uma ONG cria/edita vários eventos)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Usuário</td>
+<td style="text-align: left;">Participa</td>
+<td style="text-align: left;">Evento</td>
+<td style="text-align: left;">N:N (um voluntário participa de vários eventos, um evento tem vários voluntários)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Participação</td>
+<td style="text-align: left;">Associa</td>
+<td style="text-align: left;">Usuário e Evento</td>
+<td style="text-align: left;">Resolve a relação N:N (intermediário)</td>
+</tr>
+</tbody>
+</table>
+<p>A partir da definição do papel assumido pelas entidades descritas, associamos estas às respectivas tabelas, de forma que cada linha (registro) da tabela representa uma instância da entidade, e cada coluna representa um atributo dessas entidades. Além disso, surge a necessidade de especificar os atributos de cada tabela para auxiliar o desenvolvimento. </p>
+<h4 id="tabela-3-tabelas-do-sistema">Tabela 3: Tabelas do Sistema</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidades</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Usuário</strong></td>
+<td style="text-align: left;">Implementação da entidade Usuário e seus atributos no banco de dados</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evento</strong></td>
+<td style="text-align: left;">Implementação da entidade Evento e seus atributos no banco de dados</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Participação</strong></td>
+<td style="text-align: left;">Implementação da entidade Participação e seus atributos no banco de dados</td>
+</tr>
+</tbody>
+</table>
+<h5 id="tabela-4-atributos-de-usuario">Tabela 4 : Atributos de usuário</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Atributos</th>
+<th style="text-align: left;">Tipo de Dados</th>
+<th style="text-align: left;">Chave</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id_usuario</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">PK</td>
+<td style="text-align: left;">Identificador único do usuário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nome</code></td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Nome do usuário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>email</code></td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">E-mail utilizado para login</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>senha</code></td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Senha cripstografada do usuário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>localizacao</code></td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Localização (fixa para ONG, dinâmica para voluntário)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tipo_usuario</code></td>
+<td style="text-align: left;">VARCHAR(20)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Define o tipo de usuário (voluntario ou ong)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>descricao_ong</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Descrição institucional da ONG (apenas para ONGs)</td>
+</tr>
+</tbody>
+</table>
+<h5 id="tabela-5-atributos-de-evento">Tabela 5: Atributos de evento</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Atributos</th>
+<th style="text-align: left;">Tipo de Dados</th>
+<th style="text-align: left;">Chave</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id_evento</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">PK</td>
+<td style="text-align: left;">Identificador único do evento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nome_evento</code></td>
+<td style="text-align: left;">VARCHAR(150)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Nome do evento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>descricao_evento</code></td>
+<td style="text-align: left;">VARCHAR(150)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Descrição detalhada do evento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>data_inicio</code></td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Data de realização do evento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>data_fim</code></td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Data de finalização do evento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>localizacao_evento</code></td>
+<td style="text-align: left;">VARCHAR(150)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Local onde o evento ocorrerá</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ong_id</code></td>
+<td style="text-align: left;">VARCHAR(150)</td>
+<td style="text-align: left;">FK → Usuário.id_usuario</td>
+<td style="text-align: left;">Identifica a ONG responsável pelo evento</td>
+</tr>
+</tbody>
+</table>
+<h5 id="tabela-6-atributos-de-participacao">Tabela 6 : Atributos de participacao</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Atributos</th>
+<th style="text-align: left;">Tipo de Dados</th>
+<th style="text-align: left;">Chave</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id_participacao</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">PK</td>
+<td style="text-align: left;">Identificador único da participação</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>usuario_id</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">FK $\rightarrow$ Usuário.id_usuario</td>
+<td style="text-align: left;">Identifica o voluntário participante</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>evento_id</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">FK $\rightarrow$ Evento.id_evento</td>
+<td style="text-align: left;">Identifica o evento em que o voluntário se inscreveu</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>data_participacao</code></td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Data da inscrição ou confirmação de presença</td>
+</tr>
+</tbody>
+</table>
+<h3 id="28-visao-de-implantacao">2.8 Visão de Implantação</h3>
+<p>O software será implantado em uma infraestrutura de nuvem, a fim de garantir alta disponibilidade, segurança e escalabilidade. O servidor de aplicação será hospedado em um ambiente Linux, utilizando provedores como Render, Railway ou AWS, que oferecem suporte nativo a aplicações Django e bancos PostgreSQL. Essa escolha elimina a necessidade de infraestrutura física local, reduz custos de manutenção e permite o crescimento do sistema conforme a demanda de usuários aumenta. </p>
+<p>A camada de backend será desenvolvida com o framework <strong>Django</strong>, na <strong>linguagem Python</strong>, em conjunto com o Django Rest Framework (DRF). Essa tecnologia foi escolhida por sua robustez, segurança e grande ecossistema de bibliotecas, além de oferecer suporte nativo para <strong>APIs RESTful</strong>, facilitando a comunicação entre o servidor e o aplicativo <strong>Flutter</strong>. O backend será responsável pela lógica de negócios, autenticação, gerenciamento de campanhas e eventos, e persistência de dados. </p>
+<p>O frontend será desenvolvido em <strong>Flutter</strong>, framework multiplataforma baseado em <strong>Dart</strong>, que permite a criação de uma interface responsiva e consistente tanto para dispositivos móveis (Android e iOS) quanto para web (PWA). Essa escolha reduz a complexidade do projeto, pois um único código atende múltiplos dispositivos, mantendo a identidade visual e a fluidez da experiência do usuário. </p>
+<p>O banco de dados utilizado será o <strong>PostgreSQL</strong>, reconhecido por sua confiabilidade, escalabilidade e suporte a transações complexas. Ele será hospedado em uma instância separada na nuvem, garantindo isolamento dos dados, backup automatizado e maior segurança. A integração entre o Django e o banco será feita por meio do ORM (Object-Relational Mapper) do próprio framework, simplificando consultas e mantendo a integridade relacional do modelo de dados. </p>
+<p>A arquitetura final é composta por três camadas principais:</p>
+<ol>
+<li><strong>Frontend (Flutter)</strong> – interface com o usuário.</li>
+<li><strong>Backend (Django/DRF)</strong> – lógica e API RESTful.</li>
+<li><strong>Banco de Dados (PostgreSQL)</strong> – armazenamento de informações.</li>
+</ol>
+<p>Essa arquitetura garante que o Apoia+ seja modular, escalável, seguro e de fácil manutenção, permitindo que novas funcionalidades sejam adicionadas sem comprometer o desempenho do sistema. </p>
+<h3 id="29-restricoes-adicionais">2.9 Restrições Adicionais</h3>
+<h4 id="291-restricoes-de-acesso">2.9.1 Restrições de Acesso</h4>
+<p>O software é acessado diretamente pelo aplicativo, mas requer <strong>autenticação do usuário</strong> para realizar ações como criar ou participar de eventos.</p>
+<h4 id="292-usabilidade">2.9.2 Usabilidade</h4>
+<p>O sistema deve ser <strong>intuitivo</strong> para ambos os perfis: o usuário com pouco conhecimento tecnológico e o usuário que possui conhecimentos na área.</p>
+<h4 id="293-seguranca-de-dados">2.9.3 Segurança de Dados</h4>
+<p>Como o aplicativo irá coletar dados de ONGs e informações pessoais dos usuários, é essencial proteger essas informações.</p>
+<ul>
+<li>Todo envio de dados será realizado com <strong>conexão segura</strong>, utilizando técnicas de criptografia.</li>
+<li>O acesso é feito mediante <strong>senha pessoal</strong>, evitando uso não autorizado.</li>
+<li>Essas medidas seguem boas práticas de segurança recomendadas pela <strong>OWASP</strong> (Open Web Application Security Project) para aplicativos móveis.</li>
+</ul>
+<h2 id="3-bibliografia">3. Bibliografia</h2>
+<ul>
+<li>DATAFLAIR TEAM. Django architecture: understanding MVT pattern with a real-time Example. DataFlair, 2023. Disponível em: https://data-flair.training/blogs/django-architecture/. Acesso em: 31 de outubro 2025. </li>
+<li>OPEN WEB APPLICATION SECURITY PROJECT (OWASP). <strong>Mobile application security verification standard (MASVS)</strong>. 2023. Disponível em: https://owasp.org/www-project-mobile-security. Acesso em: 30 de outubro 2025.</li>
+<li>SERRANO, Milene. <strong>Arquitetura de software: visão geral</strong>. [Apresentação de slides]. Material de aula não publicado. Brasília: Universidade de Brasília, 2025.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
