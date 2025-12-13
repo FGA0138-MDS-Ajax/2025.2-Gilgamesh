@@ -1,8 +1,8 @@
 | Versão | Data | Descrição da Alteração | Nome(s) Integrante(s) |
 | :----: | :--: | :--------------------: | :-------------------: |
-| 1.0 | 09/11/2025 | Registro da ata de reunião 8 | Vinicius Souza |
+| 1.0 | 09/11/2025 | Registro da ata de reunião 9 | Vinicius Souza |
 
-# Reunião 8 - Gilgamesh -
+# Reunião 9 - Gilgamesh -
 
 ## Informações gerais
 **Data:** 09/11/2025 <br> 
