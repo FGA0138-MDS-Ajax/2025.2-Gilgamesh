@@ -2,7 +2,7 @@
 | :----: | :--: | :--------------------: | :-------------------: |
 | 1.0 | 30/10/2025 | Registro da ata de reunião 5| Ester Almeida |
 
-# Reunião 4 - Gilgamesh -
+# Reunião 5 - Gilgamesh -
 
 ## Informações gerais
 **Data:** 30/10/2025 <br> 
