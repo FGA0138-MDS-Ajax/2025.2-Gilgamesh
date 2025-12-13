@@ -23,6 +23,7 @@
 | 31/10 | 1.0 | Revisão ABNT | Maria Luana  |
 | 28/11 | 1.1 | Tópicos 1.2, 2.6, 2.7 | Guilherme Carvalho  |
 | 06/12 | 1.2 | Tópicos 2.3, 2.6 | Lucas  |
+| 12/12 | 2.0 | Tópicos 1.6, 2.3, 2.5 | Edson |
 
 ## Autores 
 
@@ -57,9 +58,8 @@ O escopo do projeto abrange o desenvolvimento de uma aplicação leve, acessíve
 * O cadastro e autenticação de usuários (doadores e representantes de ONGs);
 * O cadastro e a gestão de ONGs e campanhas de arrecadação;
 * A busca e visualização de pontos de apoio e campanhas próximas;
-* O acompanhamento do status das doações;
-* A visualização de relatórios e indicadores sociais, facilitando a transparência e o engajamento;
-* A criação e divulgação de eventos por parte das ONGs cadastradas, com a possibilidade de usuários visualizarem e escolherem participar ou não.
+* centralizar informações de como doar e outras maneiras de ajudar;
+* A criação e divulgação de eventos por parte das ONGs cadastradas, com a possibilidade de usuários visualizarem e escolherem participar ou não;
 
 Dessa forma, o **Apoia+** visa criar um ambiente digital de impacto social positivo, promovendo a solidariedade e tornando o processo de doação mais simples, transparente e acessível a todos.
 
@@ -97,8 +97,9 @@ No topo da arquitetura está a **View**, representada pela aplicação **Flutter
 
 * Telas de login e cadastro
 * Listagem de usuários
-* Relatórios
 * Tela de criação de eventos
+* Tela de edição de perfil
+* Tela de perfil informativo para ongs
 * Visualização de dados gerais do sistema
 
 A **View** tem como função consumir os endpoints fornecidos pelo **Django** e renderizar no aplicativo as informações retornadas pela API.
@@ -146,7 +147,6 @@ Após o processamento, o banco retorna os dados necessários, permitindo que os 
 
 ### 2.4 Metas e Restrições Arquiteturais 
 
-* **Disponibilidade:** O sistema deve visar uma disponibilidade de 99,5%, garantindo que os dados dos usuários estejam seguros, íntegros e acessíveis sempre que necessários .
 * **Padrões de codificação:** O código deve seguir as melhores práticas de codificação para Python/Django (PEP 8).
 * **Manutenibilidade:** O sistema deve ser modular e possuir baixo acoplamento entre os componentes em visão de um projeto mais fácil de se manter e realizar alterações.
 * **Segurança:** As APIs desenvolvidas no backend Django devem seguir as melhores práticas possíveis e passar em testes como aqueles definidos pelo OWASP
@@ -163,10 +163,9 @@ Assim, o produto de software tem como funcionalidades:
 * Sistema de cadastro e login;
 * Perfil público com informações pertinentes para voluntários e ONGs;
 * CRUD (Create, Read, Update e Delete) de eventos para ONGs;
-* Divulgação de eventos usando a localização do usuário como referência;
+* Divulgação de eventos;
 * Possibilidade de se inscrever antecipadamente em eventos;
 * Geração de uma lista com participantes com presença confirmada no evento;
-* Mapa interativo para melhor experiência dos usuários.
 
 Essas funcionalidades surgem para permitir uma maior integração entres voluntários e ONGs, assim centralizando distribuição de informações em apenas um canal de comunicação. A partir disso, a escolha arquitetural do produto surge em razão da experiencia prévia da equipe, assim escolhendo modelo **MVC (Model–View–Controller)**, portanto essa escolha juntamente com a decisão de adotar o *framework* **Django**, estabeleceu o padrão final sendo o **MVC (Model–View–Controller)** para o framework escolhido.
 
