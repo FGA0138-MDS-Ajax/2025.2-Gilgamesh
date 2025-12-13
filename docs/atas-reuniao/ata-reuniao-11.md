@@ -2,7 +2,7 @@
 | :----: | :--: | :--------------------: | :-------------------: |
 | 1.0 | 24/11/2025 | Registro da ata de reunião 11 | Edson Pereira |
 
-# Reunião 1 - Gilgamesh -
+# Reunião 11 - Gilgamesh -
 
 ## Informações gerais
 **Data:** 24/11/2025 <br> 
