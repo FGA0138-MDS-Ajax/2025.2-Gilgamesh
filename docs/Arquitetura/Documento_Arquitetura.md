@@ -6,7 +6,7 @@
 | :--- | :--- |
 | **Projeto** | Apoia+  |
 | **Disciplina** | Métodos de Desenvolvimento de Software (MDS)  |
-| **Versão** | 1.0  |
+| **Versão** | 2.0  |
 
 ## Histórico de Revisão 
 
